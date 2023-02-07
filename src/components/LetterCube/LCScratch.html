@@ -9,7 +9,6 @@
             margin: 50px auto;
             perspective: 1000px;
         }
-
         .face {
             position: absolute;
             width: 100%;
@@ -17,31 +16,24 @@
             background-color: blue;
             transition: transform 1s ease-in-out;
         }
-
         .front {
             transform: rotateY(0deg) translateZ(50px);
         }
-
         .back {
             transform: rotateY(180deg) translateZ(50px);
         }
-
         .right {
             transform: rotateY(90deg) translateZ(50px);
         }
-
         .left {
             transform: rotateY(-90deg) translateZ(50px);
         }
-
         .top {
             transform: rotateX(90deg) translateZ(50px);
         }
-
         .bottom {
             transform: rotateX(-90deg) translateZ(50px);
         }
-
         #next-face:hover {
             cursor: pointer;
         }
