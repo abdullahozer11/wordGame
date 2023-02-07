@@ -1,0 +1,28 @@
+<html>
+    <title>Welcome to sample html</title>
+<head>
+<link rel="stylesheet" href="sample.css">
+</head>
+<body>
+<div class="container">
+    <div class="box">
+        <div class="card" id="front">Front</div>
+        <div class="card" id="left">Left</div>
+        <div class="card" id="right">Right</div>
+        <div class="card" id="top">Top</div>
+        <div class="card" id="bottom">Bottom</div>
+        <div class="card" id="back">Back</div>
+    </div>
+</div>
+<button id="animateBtn">Animate</button>
+<script>
+    let index = 0;
+    const animateBtn = document.querySelector("#animateBtn");
+    const box = document.querySelector(".box");
+    animateBtn.addEventListener("click", function () {
+        index += 1;
+        box.style.transform = `rotateX(${index * 90}deg)`;
+    });
+</script>
+</body>
+</html>
