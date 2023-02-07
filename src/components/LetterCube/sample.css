@@ -25,13 +25,9 @@ body {
     top: 100px;
     left: 100px;
     transform-style: preserve-3d;
+    transform-origin: 50% 50% -216.506350946px;
+    /*transform: rotateX(60deg);*/
     transition: transform 2s ease-in-out;
-}
-
-@keyframes myAnimation {
-    to {
-        transform: rotateX(90deg);
-    }
 }
 
 .card {
@@ -47,37 +43,26 @@ body {
     position: absolute;
 }
 
-#left {
-    right: 125px;
-    transform: rotateY(-90deg);
+#face2 {
+    transform-origin: top;
+    transform: translateY(250px) rotateX(-60deg);
 }
 
-#right {
-    left: 125px;
-    transform: rotateY(90deg);
+#face3 {
+    transform-origin: bottom;
+    transform: translateZ(-433.012701892px) rotateX(-120deg);
 }
 
-#top {
-    bottom: 125px;
-    transform: rotateX(90deg);
+#face4 {
+    transform: translateZ(-433.012701892px) rotateX(180deg);
 }
 
-#bottom {
-    top: 125px;
-    transform: rotateX(-90deg);
+#face5 {
+    transform-origin: top;
+    transform: translateZ(-433.012701892px) rotateX(120deg);
 }
 
-#back {
-    transform: translateZ(-125px) rotateX(180deg);
-}
-
-#front {
-    transform: translateZ(125px);
-}
-
-.hex-cylinder {
-  height: 250px;
-  width: 250px;
-  position: relative;
-  perspective: 500px;
+#face6 {
+    transform-origin: bottom;
+    transform: translateY(-250px) rotateX(60deg);
 }
