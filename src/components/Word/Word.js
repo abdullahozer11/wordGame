@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import Word from "../word/word";
+import LetterCube from "../LetterCube/LetterCube";
 
-class Board extends Component {
+class Word extends Component {
     constructor(props) {
         super(props);
     }
@@ -38,12 +38,18 @@ class Board extends Component {
     render() {
         return (
             <div>
-                <Word/>
+                <div className={'wordWrapper'}>
+                    <LetterCube/>
+                    <LetterCube/>
+                    <LetterCube/>
+                    <LetterCube/>
+                    <LetterCube/>
+                </div>
             </div>
         );
     }
 }
 
-Board.propTypes = {};
+Word.propTypes = {};
 
-export default Board;
+export default Word;
