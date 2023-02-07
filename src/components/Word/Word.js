@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import LetterCube from "../LetterCube/LetterCube";
+import "./Word.css";
+
 
 class Word extends Component {
     constructor(props) {

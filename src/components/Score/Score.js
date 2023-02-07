@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import "./Score.css";
+
 
 class Score extends Component {
     constructor(props) {

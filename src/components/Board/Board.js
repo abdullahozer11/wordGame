@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import Word from "../Word/Word";
+import "./Board.css";
+
 
 class Board extends Component {
     constructor(props) {
