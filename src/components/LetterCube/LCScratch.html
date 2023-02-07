@@ -9,60 +9,78 @@
             margin: 50px auto;
             perspective: 1000px;
             transition: transform 1s ease-in-out;
+            text-align: center;
         }
+
+        .button-wrapper {
+            width: 100%;
+            text-align: center;
+        }
+
         .face {
             position: absolute;
             width: 100%;
             height: 100%;
             transition: transform 1s ease-in-out;
+            font-size: 45px;
+            line-height: 100px;
         }
-        .front {
+        .face0 {
             background-color: blue;
-            transform: rotateY(0deg) translateZ(50px);
+            display: block;
         }
-        .back {
+        .face1 {
             background-color: red;
-            transform: rotateY(180deg) translateZ(50px);
+            display: none;
         }
-        .right {
+        .face2 {
             background-color: green;
-            transform: rotateY(90deg) translateZ(50px);
+            display: none;
         }
-        .left {
+        .face3 {
             background-color: purple;
-            transform: rotateY(-90deg) translateZ(50px);
+            display: none;
         }
-        #next-face:hover {
-            cursor: pointer;
+        .face4 {
+            background-color: aqua;
+            display: none;
+        }
+        .face5 {
+            background-color: brown;
+            display: none;
         }
     </style>
 </head>
 <body>
 <div class="cube">
-    <div class="face front">front</div>
-    <div class="face back">back</div>
-    <div class="face right">right</div>
-    <div class="face left">left</div>
+    <div class="face face0">X</div>
+    <div class="face face1">Y</div>
+    <div class="face face2">Z</div>
+    <div class="face face3">A</div>
+    <div class="face face4">E</div>
+    <div class="face face5">C</div>
 </div>
-<button id="next-face">Next</button>
+<div class="button-wrapper">
+    <button id="next-button">Next</button>
+    <button id="prev-button">Previous</button>
+</div>
 <script>
-    let currentFace = 0;
-    const faces = [
-        "front",
-        "right",
-        "back",
-        "left",
-    ];
-    const cube = document.querySelector(".cube");
-    const nextBtn = document.querySelector("#next-face");
+    let currentIndex = 0;
+    const nextBtn = document.querySelector("#next-button");
     nextBtn.addEventListener("click", function () {
-        currentFace = (currentFace + 1) % faces.length;
-        cube.style.transform = `rotateY(${currentFace * 90}deg)`;
+        document.querySelector(".face" + currentIndex).style.display = 'none';
+        currentIndex = (currentIndex + 1) % 6;
+        document.querySelector(".face" + currentIndex).style.display = 'block';
+    });
+    const prevBtn = document.querySelector("#prev-button");
+    prevBtn.addEventListener("click", function () {
+        document.querySelector(".face" + currentIndex).style.display = 'none';
+        currentIndex = (currentIndex - 1) % 6;
+        if (currentIndex === -1) {
+            currentIndex = 5;
+        }
+        document.querySelector(".face" + currentIndex).style.display = 'block';
     });
 </script>
 </body>
 </html>
-
-<!--these would rotate the cube-->
-<!-- transform: rotateX(180deg); -->
-<!-- transform: rotateY(180deg); -->
