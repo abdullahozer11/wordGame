@@ -14,13 +14,19 @@
         <div class="card" id="face6">face6</div>
     </div>
 </div>
-<button id="animateBtn">Animate</button>
+<button id="nextButton">Next</button>
+<button id="prevButton">Previous</button>
 <script>
     let index = 0;
-    const animateBtn = document.querySelector("#animateBtn");
+    const nextBtn = document.querySelector("#nextButton");
     const box = document.querySelector(".box");
-    animateBtn.addEventListener("click", function () {
-        index += 1;
+    nextBtn.addEventListener("click", function () {
+        index = index + 1;
+        box.style.transform = `rotateX(${index * 60}deg)`;
+    });
+    const prevBtn = document.querySelector("#prevButton");
+    prevBtn.addEventListener("click", function () {
+        index = index - 1;
         box.style.transform = `rotateX(${index * 60}deg)`;
     });
 </script>

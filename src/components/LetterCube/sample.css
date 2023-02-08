@@ -27,7 +27,7 @@ body {
     transform-style: preserve-3d;
     transform-origin: 50% 50% -216.506350946px;
     /*transform: rotateX(60deg);*/
-    transition: transform 2s ease-in-out;
+    transition: transform .5s linear;
 }
 
 .card {
@@ -65,4 +65,8 @@ body {
 #face6 {
     transform-origin: bottom;
     transform: translateY(-250px) rotateX(60deg);
+}
+
+#nextButton {
+    margin: 250px 0 0 300px;
 }
