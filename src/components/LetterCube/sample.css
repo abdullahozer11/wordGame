@@ -38,7 +38,9 @@ body {
     color: white;
     background: black;
     border: 2px solid white;
-    font-size: 32px;
+    font-size: 96px;
+    line-height: 50px;
+    justify-content: center;
     box-sizing: border-box;
     position: absolute;
 }
