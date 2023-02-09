@@ -7,6 +7,7 @@ class LetterCube extends Component {
         super(props);
         this.state = {
             index: 0,
+            transform: '',
         }
     }
 
