@@ -8,26 +8,30 @@ class Word extends Component {
         super(props);
         this.state = {
             focus: 0,
-            firstLetterList: ['A', 'B', 'C', 'D', 'E', 'F'],
-            secondLetterList: ['A', 'B', 'C', 'D', 'E', 'F'],
-            thirdLetterList: ['A', 'B', 'C', 'D', 'E', 'F'],
-            forthLetterList: ['A', 'B', 'C', 'D', 'E', 'F'],
-            fifthLetterList: ['A', 'B', 'C', 'D', 'E', 'F'],
+            letters: [
+                ['A', 'B', 'C', 'D', 'E', 'F'],
+                ['A', 'B', 'C', 'D', 'E', 'F'],
+                ['A', 'B', 'C', 'D', 'E', 'F'],
+                ['A', 'B', 'C', 'D', 'E', 'F'],
+                ['A', 'B', 'C', 'D', 'E', 'F']
+            ]
         }
     }
 
     componentDidMount() {
+        let word = '';
+        this.state.letters.forEach(list => {
+            word += list[0];
+        });
+        this.props.initWord(word);
         window.addEventListener('keydown', this.handleKeyDown);
-        window.addEventListener('keyup', this.handleKeyUp);
     }
 
     componentWillUnmount() {
         window.removeEventListener('keydown', this.handleKeyDown);
-        window.removeEventListener('keyup', this.handleKeyUp);
     }
 
     handleKeyDown = (event) => {
-        let word;
         switch (event.key) {
             case 'ArrowRight':
                 this.setState({ focus: (this.state.focus + 1) % 5 });
@@ -46,11 +50,11 @@ class Word extends Component {
     render() {
         return (
             <div className={'word-div'}>
-                <LetterCube id={0} letterList={this.state.firstLetterList} focus={this.state.focus === 0} focusedWordChange={this.props.focusedWordChange} />
-                <LetterCube id={1} letterList={this.state.secondLetterList} focus={this.state.focus === 1} focusedWordChange={this.props.focusedWordChange} />
-                <LetterCube id={2} letterList={this.state.thirdLetterList} focus={this.state.focus === 2} focusedWordChange={this.props.focusedWordChange} />
-                <LetterCube id={3} letterList={this.state.forthLetterList} focus={this.state.focus === 3} focusedWordChange={this.props.focusedWordChange} />
-                <LetterCube id={4} letterList={this.state.fifthLetterList} focus={this.state.focus === 4} focusedWordChange={this.props.focusedWordChange} />
+                <LetterCube id={0} letterList={this.state.letters[0]} focus={this.state.focus === 0} focusedWordChange={this.props.focusedWordChange} />
+                <LetterCube id={1} letterList={this.state.letters[1]} focus={this.state.focus === 1} focusedWordChange={this.props.focusedWordChange} />
+                <LetterCube id={2} letterList={this.state.letters[2]} focus={this.state.focus === 2} focusedWordChange={this.props.focusedWordChange} />
+                <LetterCube id={3} letterList={this.state.letters[3]} focus={this.state.focus === 3} focusedWordChange={this.props.focusedWordChange} />
+                <LetterCube id={4} letterList={this.state.letters[4]} focus={this.state.focus === 4} focusedWordChange={this.props.focusedWordChange} />
             </div>
         );
     }

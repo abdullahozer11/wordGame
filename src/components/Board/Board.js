@@ -10,18 +10,16 @@ class Board extends Component {
         this.state = {
             playedWords: [],
             score: 0,
-            focusedWord: 'ABCDE'
+            focusedWord: '',
         }
     }
 
     componentDidMount() {
         window.addEventListener('keydown', this.handleKeyDown);
-        window.addEventListener('keyup', this.handleKeyUp);
     }
 
     componentWillUnmount() {
         window.removeEventListener('keydown', this.handleKeyDown);
-        window.removeEventListener('keyup', this.handleKeyUp);
     }
 
     handleKeyDown = (event) => {
@@ -35,8 +33,10 @@ class Board extends Component {
     };
 
     play() {
+        console.log(this.state.focusedWord);
         let word = this.state.focusedWord;
-        if (!(word in this.state.playedWords) && (word in this.dictionary)) {
+        if (!(word in this.state.playedWords)) {
+        // if (!(word in this.state.playedWords) && (word in this.dictionary)) {
             this.setState({
                 score: this.state.score + 1,
                 playedWords: [...this.state.playedWords, word],
@@ -44,10 +44,17 @@ class Board extends Component {
         }
     }
 
-    focusedWordChange(id, letter) {
-        let newFocusedWord = this.state.focusedWord;
-        newFocusedWord[id] = letter;
-        this.setState({focusedWord: newFocusedWord});
+    focusedWordChange = (id, letter) => {
+        let focusedWord = this.state.focusedWord.split("");
+        focusedWord[id] = letter;
+        focusedWord = focusedWord.join("");
+        this.setState({focusedWord});
+        console.log(focusedWord);
+    };
+
+    initWord = (word) => {
+        console.log(word);
+        this.setState({focusedWord: word});
     }
 
     render() {
@@ -55,7 +62,7 @@ class Board extends Component {
             <div className={'board-div'}>
                 <h1>LET'S PLAY</h1>
                 <div className={'game-mid-div'}>
-                    <Word/>
+                    <Word focusedWordChange={this.focusedWordChange} initWord={this.initWord}/>
                     <button id={'try-button'} onClick={() => this.play()}>PRESS ENTER</button>
                 </div>
                 <Score/>

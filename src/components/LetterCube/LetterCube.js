@@ -24,23 +24,21 @@ class LetterCube extends Component {
             nextIndex = this.state.index - 1;
         }
         let nextFocusedLetter;
-        nextFocusedLetter = this.props.letterList[this.myModulus(nextIndex, 5)]
+        nextFocusedLetter = this.props.letterList[this.myModulus(nextIndex, 6)]
         this.setState({
             index: nextIndex,
             transform: `rotateX(${nextIndex * 60}deg)`,
             focusedLetter: nextFocusedLetter
         });
-        this.props.focusedWordChange({'id': this.props.id, 'letter': nextFocusedLetter });
+        this.props.focusedWordChange(this.props.id, nextFocusedLetter);
     }
 
     componentDidMount() {
         window.addEventListener('keydown', this.handleKeyDown);
-        window.addEventListener('keyup', this.handleKeyUp);
     }
 
     componentWillUnmount() {
         window.removeEventListener('keydown', this.handleKeyDown);
-        window.removeEventListener('keyup', this.handleKeyUp);
     }
 
     handleKeyDown = (event) => {
