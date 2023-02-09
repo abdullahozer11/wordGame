@@ -27,9 +27,9 @@ class Word extends Component {
             <div>
                 <div className={'wordWrapper'}>
                     <LetterCube/>
-                    {/*<LetterCube/>*/}
-                    {/*<LetterCube/>*/}
-                    {/*<LetterCube/>*/}
+                    <LetterCube/>
+                    <LetterCube/>
+                    <LetterCube/>
                     {/*<LetterCube/>*/}
                 </div>
             </div>

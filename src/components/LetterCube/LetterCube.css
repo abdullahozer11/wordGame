@@ -1,16 +1,18 @@
 .container {
     height: 40rem;
+    margin: 25rem 7.5rem 0 7.5rem;
 }
 
 .letter-wrapper {
-        width: 25rem;
+    width: 40rem;
 }
 
 .box {
+    width: 25rem;
+    height: 25rem;
     transform-style: preserve-3d;
     transform-origin: 50% 50% -21.6506351rem;
     transition: transform .5s linear;
-    margin: 20rem 0 0 5rem;
 }
 
 .card {

@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background: radial-gradient(#f6f672, #75a4f6);
+  height: 100vh;
 }
 
 .App-logo {
