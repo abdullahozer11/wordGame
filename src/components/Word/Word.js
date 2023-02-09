@@ -30,7 +30,7 @@ class Word extends Component {
                     <LetterCube/>
                     <LetterCube/>
                     <LetterCube/>
-                    {/*<LetterCube/>*/}
+                    <LetterCube/>
                 </div>
             </div>
         );
