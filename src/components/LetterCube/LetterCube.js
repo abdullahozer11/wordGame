@@ -21,12 +21,24 @@ class LetterCube extends Component {
             <div className={'letter-wrapper'}>
                 <div className="container">
                     <div className="box" style={{transform: this.state.transform}}>
-                        <div className="card" id="face1">X</div>
-                        <div className="card" id="face2">Y</div>
-                        <div className="card" id="face3">Z</div>
-                        <div className="card" id="face4">A</div>
-                        <div className="card" id="face5">E</div>
-                        <div className="card" id="face6">C</div>
+                        <div className="card" id="face1">
+                            <div className={'letterTextWrapper'}>X</div>
+                        </div>
+                        <div className="card" id="face2">
+                            <div className={'letterTextWrapper'}>Y</div>
+                        </div>
+                        <div className="card" id="face3">
+                            <div className={'letterTextWrapper'}>Z</div>
+                        </div>
+                        <div className="card" id="face4">
+                            <div className={'letterTextWrapper'}>A</div>
+                        </div>
+                        <div className="card" id="face5">
+                            <div className={'letterTextWrapper'}>E</div>
+                        </div>
+                        <div className="card" id="face6">
+                            <div className={'letterTextWrapper'}>C</div>
+                        </div>
                     </div>
                 </div>
                 <button id="nextButton" onClick={() => this.rotate(1)}>Next</button>

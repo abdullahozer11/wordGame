@@ -1,53 +1,56 @@
 .letter-wrapper {
-    width: 40rem;
+    width: 40em;
 }
 
 .container {
-    height: 40rem;
-    margin: 25rem 7.5rem 0 7.5rem;
+    height: 40em;
+    margin: 25em 7.5em 0 7.5em;
 }
 
 .box {
-    width: 25rem;
-    height: 25rem;
+    width: 25em;
+    height: 25em;
     transform-style: preserve-3d;
-    transform-origin: 50% 50% -21.6506351rem;
+    transform-origin: 50% 50% -21.6506351em;
     transition: transform .5s linear;
 }
 
 .card {
-    height: 25rem;
-    width: 25rem;
+    height: 25em;
+    width: 25em;
     text-align: center;
     color: white;
     background: black;
-    border: 0.2rem solid white;
-    font-size: 96px;
-    line-height: 25rem;
+    border: 0.2em solid white;
+    line-height: 25em;
     box-sizing: border-box;
     position: absolute;
 }
 
 #face2 {
     transform-origin: top;
-    transform: translateY(25rem) rotateX(-60deg);
+    transform: translateY(25em) rotateX(-60deg);
 }
 
 #face3 {
     transform-origin: bottom;
-    transform: translateZ(-43.3012702rem) rotateX(-120deg);
+    transform: translateZ(-43.3012702em) rotateX(-120deg);
 }
 
 #face4 {
-    transform: translateZ(-43.3012702rem) rotateX(180deg);
+    transform: translateZ(-43.3012702em) rotateX(180deg);
 }
 
 #face5 {
     transform-origin: top;
-    transform: translateZ(-43.3012702rem) rotateX(120deg);
+    transform: translateZ(-43.3012702em) rotateX(120deg);
 }
 
 #face6 {
     transform-origin: bottom;
-    transform: translateY(-25rem) rotateX(60deg);
+    transform: translateY(-25em) rotateX(60deg);
+}
+
+.letterTextWrapper {
+    font-size: 10em;
 }
