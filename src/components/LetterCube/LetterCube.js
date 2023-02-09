@@ -11,13 +11,14 @@ class LetterCube extends Component {
     }
 
     rotate = (forward) => {
-        let nextIndex = forward ? this.state.index + 1 : this.state.index - 1;
+        console.log(forward);
+        let nextIndex = forward === 1 ? this.state.index + 1 : this.state.index - 1;
         this.setState({index: nextIndex, transform: `rotateX(${nextIndex * 60}deg)`});
     }
 
     render() {
         return (
-            <div className='wrapper'>
+            <div className={'letter-wrapper'}>
                 <div className="container">
                     <div className="box" style={{transform: this.state.transform}}>
                         <div className="card" id="face1">X</div>
@@ -28,8 +29,8 @@ class LetterCube extends Component {
                         <div className="card" id="face6">C</div>
                     </div>
                 </div>
-                <button id="nextButton" onClick={this.rotate(1)}>Next</button>
-                <button id="prevButton" onClick={this.rotate(-1)}>Previous</button>
+                <button id="nextButton" onClick={() => this.rotate(1)}>Next</button>
+                <button id="prevButton" onClick={() => this.rotate(-1)}>Previous</button>
             </div>
         );
     }

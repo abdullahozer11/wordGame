@@ -1,63 +1,51 @@
 .container {
-    height: 60vh;
-    width: 30vw;
-    position: absolute;
-    top: 50vh;
-    left: 50vw;
-    transform: translate(-50%, -50%);
+    height: 40rem;
+}
+
+.letter-wrapper {
+        width: 25rem;
 }
 
 .box {
-    height: 250px;
-    width: 250px;
-    position: absolute;
-    top: 100px;
-    left: 100px;
     transform-style: preserve-3d;
-    transform-origin: 50% 50% -216.506350946px;
-    /*transform: rotateX(60deg);*/
+    transform-origin: 50% 50% -21.6506351rem;
     transition: transform .5s linear;
+    margin: 20rem 0 0 5rem;
 }
 
 .card {
-    height: 250px;
-    width: 250px;
+    height: 25rem;
+    width: 25rem;
     text-align: center;
-    padding: 100px 0px;
     color: white;
     background: black;
-    border: 2px solid white;
+    border: 0.2rem solid white;
     font-size: 96px;
-    line-height: 50px;
-    justify-content: center;
+    line-height: 25rem;
     box-sizing: border-box;
     position: absolute;
 }
 
 #face2 {
     transform-origin: top;
-    transform: translateY(250px) rotateX(-60deg);
+    transform: translateY(25rem) rotateX(-60deg);
 }
 
 #face3 {
     transform-origin: bottom;
-    transform: translateZ(-433.012701892px) rotateX(-120deg);
+    transform: translateZ(-43.3012702rem) rotateX(-120deg);
 }
 
 #face4 {
-    transform: translateZ(-433.012701892px) rotateX(180deg);
+    transform: translateZ(-43.3012702rem) rotateX(180deg);
 }
 
 #face5 {
     transform-origin: top;
-    transform: translateZ(-433.012701892px) rotateX(120deg);
+    transform: translateZ(-43.3012702rem) rotateX(120deg);
 }
 
 #face6 {
     transform-origin: bottom;
-    transform: translateY(-250px) rotateX(60deg);
-}
-
-#nextButton {
-    margin: 250px 0 0 300px;
+    transform: translateY(-25rem) rotateX(60deg);
 }
