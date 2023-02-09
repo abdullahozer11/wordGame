@@ -9,6 +9,7 @@ class Word extends Component {
     }
 
     componentDidMount() {
+        window.addEventListener('keyenter', this.handleKeyEnter);
         window.addEventListener('keydown', this.handleKeyDown);
         window.addEventListener('keyup', this.handleKeyUp);
         window.addEventListener('keyright', this.handleKeyRight);
@@ -16,6 +17,7 @@ class Word extends Component {
     }
 
     componentWillUnmount() {
+        window.removeEventListener('keyenter', this.handleKeyEnter);
         window.removeEventListener('keydown', this.handleKeyDown);
         window.removeEventListener('keyup', this.handleKeyUp);
         window.removeEventListener('keyright', this.handleKeyRight);

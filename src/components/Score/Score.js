@@ -5,6 +5,9 @@ import "./Score.css";
 class Score extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            score: 0,
+        }
     }
 
     componentDidMount() {
@@ -17,8 +20,9 @@ class Score extends Component {
 
     render() {
         return (
-            <div>
-
+            <div className={'scorewrapper'}>
+                <p>Number of words found:</p>
+                <p>{this.state.score}</p>
             </div>
         );
     }

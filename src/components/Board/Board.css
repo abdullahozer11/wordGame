@@ -8,15 +8,23 @@
 }
 
 #try-button{
-    font-size: 6vh;
-    width: 4em;
-    height: 5em;
+    width: 200px;
+    height: 400px;
+    font-size: 3vh;
     margin: auto;
-    margin-right: 1.5em;
-    margin-top: 2.5em;
+    margin-right: 6vw;
+    margin-top: 12vh;
 }
 
 .game-mid-div {
     display: flex;
     flex-direction: row;
+}
+
+.scorewrapper {
+    margin-top: 2vh;
+}
+
+.scorewrapper p {
+    font-size: 2.5em;
 }
