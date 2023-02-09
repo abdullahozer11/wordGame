@@ -35,7 +35,7 @@ class Word extends Component {
                 this.setState({ focus: (this.state.focus + 4) % 5 });
                 break;
             case 'ArrowEnter':
-                this.props.play();
+                this.props.play({});
                 break;
             default:
                 break;

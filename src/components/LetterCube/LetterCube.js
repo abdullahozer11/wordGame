@@ -8,12 +8,28 @@ class LetterCube extends Component {
         this.state = {
             index: 0,
             transform: '',
+            focusedLetter: this.props.letterList[0],
         }
     }
 
-    rotate = (params) => {
-        let nextIndex = params['forward'] ? this.state.index + 1 : this.state.index - 1;
-        this.setState({index: nextIndex, transform: `rotateX(${nextIndex * 60}deg)`});
+    myModulus(x, n) {
+        return ((x % n) + n) % n;
+    };
+
+    rotate = (kwargs) => {
+        let nextIndex;
+        if (kwargs['forward']) {
+            nextIndex = this.state.index + 1;
+        } else {
+            nextIndex = this.state.index - 1;
+        }
+        let nextFocusedLetter;
+        nextFocusedLetter = this.props.letterList[this.myModulus(nextIndex, 5)]
+        this.setState({
+            index: nextIndex,
+            transform: `rotateX(${nextIndex * 60}deg)`,
+            focusedLetter: nextFocusedLetter
+        });
     }
 
     componentDidMount() {
@@ -67,8 +83,12 @@ class LetterCube extends Component {
                     </div>
                     <div className={'border'} style={{display: (this.props.focus ? 'block' : 'none')}}/>
                 </div>
-                <button className={'cube-ctrl-button'} id="nextButton" onClick={() => this.rotate({forward: true})}>Next</button>
-                <button className={'cube-ctrl-button'} id="prevButton" onClick={() => this.rotate({forward: false})}>Previous</button>
+                <button className={'cube-ctrl-button'} id="nextButton"
+                        onClick={() => this.rotate({forward: true})}>Next
+                </button>
+                <button className={'cube-ctrl-button'} id="prevButton"
+                        onClick={() => this.rotate({forward: false})}>Previous
+                </button>
             </div>
         );
     }

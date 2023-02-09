@@ -29,7 +29,8 @@ class Board extends Component {
         }
     };
 
-    play() {
+    play(kwargs) {
+        // kwargs[word]
 
     }
 
