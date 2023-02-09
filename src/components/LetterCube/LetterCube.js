@@ -12,10 +12,34 @@ class LetterCube extends Component {
     }
 
     rotate = (forward) => {
-        console.log(forward);
         let nextIndex = forward === 1 ? this.state.index + 1 : this.state.index - 1;
         this.setState({index: nextIndex, transform: `rotateX(${nextIndex * 60}deg)`});
     }
+
+    componentDidMount() {
+        window.addEventListener('keydown', this.handleKeyDown);
+        window.addEventListener('keyup', this.handleKeyUp);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('keydown', this.handleKeyDown);
+        window.removeEventListener('keyup', this.handleKeyUp);
+    }
+
+    handleKeyDown = (event) => {
+        if (this.props.focus) {
+            switch (event.key) {
+                case 'ArrowUp':
+                    this.rotate(1);
+                    break;
+                case 'ArrowDown':
+                    this.rotate(-1);
+                    break;
+                default:
+                    break;
+            }
+        }
+    };
 
     render() {
         return (
@@ -41,6 +65,7 @@ class LetterCube extends Component {
                             <div className={'letterTextWrapper'}>{this.props.letterList[5]}</div>
                         </div>
                     </div>
+                    <div className={'border'} style={{display: (this.props.focus ? 'block' : 'none')}}/>
                 </div>
                 <button className={'cube-ctrl-button'} id="nextButton" onClick={() => this.rotate(1)}>Next</button>
                 <button className={'cube-ctrl-button'} id="prevButton" onClick={() => this.rotate(-1)}>Previous</button>

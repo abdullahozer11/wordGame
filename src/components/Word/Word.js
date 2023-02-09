@@ -19,47 +19,37 @@ class Word extends Component {
     componentDidMount() {
         window.addEventListener('keydown', this.handleKeyDown);
         window.addEventListener('keyup', this.handleKeyUp);
-        window.addEventListener('keyright', this.handleKeyRight);
-        window.addEventListener('keyleft', this.handleKeyLeft);
     }
 
     componentWillUnmount() {
         window.removeEventListener('keydown', this.handleKeyDown);
         window.removeEventListener('keyup', this.handleKeyUp);
-        window.removeEventListener('keyright', this.handleKeyRight);
-        window.removeEventListener('keyleft', this.handleKeyLeft);
     }
 
-    handleKeyDown() {
-
-    }
-
-    handleKeyUp() {
-
-    }
-
-    handleKeyRight() {
-        let newFocus = this.state.focus + 1;
-        this.setState({
-            focus: newFocus,
-        })
-    }
-
-    handleKeyLeft() {
-        let newFocus = this.state.focus - 1;
-        this.setState({
-            focus: newFocus,
-        })
-    }
+    handleKeyDown = (event) => {
+        switch (event.key) {
+            case 'ArrowRight':
+                this.setState({ focus: (this.state.focus + 1) % 5 });
+                break;
+            case 'ArrowLeft':
+                this.setState({ focus: (this.state.focus + 4) % 5 });
+                break;
+            case 'Enter':
+                // do something for enter key
+                break;
+            default:
+                break;
+        }
+    };
 
     render() {
         return (
             <div className={'word-div'}>
-                <LetterCube letterList={this.state.firstLetterList}/>
-                <LetterCube letterList={this.state.secondLetterList}/>
-                <LetterCube letterList={this.state.thirdLetterList}/>
-                <LetterCube letterList={this.state.forthLetterList}/>
-                <LetterCube letterList={this.state.fifthLetterList}/>
+                <LetterCube letterList={this.state.firstLetterList} focus={this.state.focus === 0}/>
+                <LetterCube letterList={this.state.secondLetterList} focus={this.state.focus === 1}/>
+                <LetterCube letterList={this.state.thirdLetterList} focus={this.state.focus === 2}/>
+                <LetterCube letterList={this.state.forthLetterList} focus={this.state.focus === 3}/>
+                <LetterCube letterList={this.state.fifthLetterList} focus={this.state.focus === 4}/>
             </div>
         );
     }

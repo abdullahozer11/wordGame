@@ -28,6 +28,20 @@
     position: absolute;
 }
 
+.border {
+    position: absolute;
+    height: 23em;
+    width: 23em;
+    border: 2em solid green;
+    top: 43.5em;
+    transform: translateX(-1em) translateY(-1em);
+}
+
+.for-test {
+    position: absolute;
+    top: 500px;
+}
+
 #face2 {
     transform-origin: top;
     transform: translateY(25em) rotateX(-60deg);
