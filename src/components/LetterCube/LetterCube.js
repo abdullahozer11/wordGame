@@ -60,6 +60,9 @@ class LetterCube extends Component {
     render() {
         return (
             <div className={'letter-wrapper'}>
+                <button className={'cube-ctrl-button'} id="upButton"
+                        onClick={() => this.rotate({forward: false})}>Up
+                </button>
                 <div className="container">
                     <div className="box" style={{transform: this.state.transform}}>
                         <div className="card" id="face1">
@@ -83,11 +86,8 @@ class LetterCube extends Component {
                     </div>
                     <div className={'border'} style={{display: (this.props.focus ? 'block' : 'none')}}/>
                 </div>
-                <button className={'cube-ctrl-button'} id="nextButton"
-                        onClick={() => this.rotate({forward: true})}>Next
-                </button>
-                <button className={'cube-ctrl-button'} id="prevButton"
-                        onClick={() => this.rotate({forward: false})}>Previous
+                <button className={'cube-ctrl-button'} id="downButton"
+                        onClick={() => this.rotate({forward: true})}>Down
                 </button>
             </div>
         );

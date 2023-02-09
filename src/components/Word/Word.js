@@ -27,6 +27,7 @@ class Word extends Component {
     }
 
     handleKeyDown = (event) => {
+        let word;
         switch (event.key) {
             case 'ArrowRight':
                 this.setState({ focus: (this.state.focus + 1) % 5 });
@@ -35,7 +36,7 @@ class Word extends Component {
                 this.setState({ focus: (this.state.focus + 4) % 5 });
                 break;
             case 'ArrowEnter':
-                this.props.play({});
+                this.props.play(word);
                 break;
             default:
                 break;

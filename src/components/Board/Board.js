@@ -29,9 +29,13 @@ class Board extends Component {
         }
     };
 
-    play(kwargs) {
-        // kwargs[word]
-
+    play(word) {
+        if (!(word in this.state.playedWords) && (word in this.dictionary)) {
+            this.setState({
+                score: this.state.score + 1,
+                playedWords: [...this.state.playedWords, word],
+            });
+        }
     }
 
     render() {
