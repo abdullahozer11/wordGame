@@ -36,7 +36,7 @@ class Word extends Component {
                 this.setState({ focus: (this.state.focus + 4) % 5 });
                 break;
             case 'ArrowEnter':
-                this.props.play(word);
+                this.props.play();
                 break;
             default:
                 break;
@@ -46,11 +46,11 @@ class Word extends Component {
     render() {
         return (
             <div className={'word-div'}>
-                <LetterCube letterList={this.state.firstLetterList} focus={this.state.focus === 0}/>
-                <LetterCube letterList={this.state.secondLetterList} focus={this.state.focus === 1}/>
-                <LetterCube letterList={this.state.thirdLetterList} focus={this.state.focus === 2}/>
-                <LetterCube letterList={this.state.forthLetterList} focus={this.state.focus === 3}/>
-                <LetterCube letterList={this.state.fifthLetterList} focus={this.state.focus === 4}/>
+                <LetterCube id={0} letterList={this.state.firstLetterList} focus={this.state.focus === 0} focusedWordChange={this.props.focusedWordChange} />
+                <LetterCube id={1} letterList={this.state.secondLetterList} focus={this.state.focus === 1} focusedWordChange={this.props.focusedWordChange} />
+                <LetterCube id={2} letterList={this.state.thirdLetterList} focus={this.state.focus === 2} focusedWordChange={this.props.focusedWordChange} />
+                <LetterCube id={3} letterList={this.state.forthLetterList} focus={this.state.focus === 3} focusedWordChange={this.props.focusedWordChange} />
+                <LetterCube id={4} letterList={this.state.fifthLetterList} focus={this.state.focus === 4} focusedWordChange={this.props.focusedWordChange} />
             </div>
         );
     }

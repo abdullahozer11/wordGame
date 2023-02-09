@@ -7,6 +7,11 @@ import Score from "../Score/Score";
 class Board extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            playedWords: [],
+            score: 0,
+            focusedWord: 'ABCDE'
+        }
     }
 
     componentDidMount() {
@@ -29,13 +34,20 @@ class Board extends Component {
         }
     };
 
-    play(word) {
+    play() {
+        let word = this.state.focusedWord;
         if (!(word in this.state.playedWords) && (word in this.dictionary)) {
             this.setState({
                 score: this.state.score + 1,
                 playedWords: [...this.state.playedWords, word],
             });
         }
+    }
+
+    focusedWordChange(id, letter) {
+        let newFocusedWord = this.state.focusedWord;
+        newFocusedWord[id] = letter;
+        this.setState({focusedWord: newFocusedWord});
     }
 
     render() {

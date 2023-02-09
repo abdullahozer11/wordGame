@@ -30,6 +30,7 @@ class LetterCube extends Component {
             transform: `rotateX(${nextIndex * 60}deg)`,
             focusedLetter: nextFocusedLetter
         });
+        this.props.focusedWordChange({'id': this.props.id, 'letter': nextFocusedLetter });
     }
 
     componentDidMount() {
