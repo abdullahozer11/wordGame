@@ -12,7 +12,6 @@ class Word extends Component {
     }
 
     componentDidMount() {
-        window.addEventListener('keyenter', this.handleKeyEnter);
         window.addEventListener('keydown', this.handleKeyDown);
         window.addEventListener('keyup', this.handleKeyUp);
         window.addEventListener('keyright', this.handleKeyRight);
