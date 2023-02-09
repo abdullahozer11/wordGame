@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 import LetterCube from "../LetterCube/LetterCube";
 import "./Word.css";
 
@@ -9,32 +8,18 @@ class Word extends Component {
         super(props);
     }
 
-    componentWillMount() {
-
-    }
-
     componentDidMount() {
-
-    }
-
-    componentWillReceiveProps(nextProps) {
-
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-
+        window.addEventListener('keydown', this.handleKeyDown);
+        window.addEventListener('keyup', this.handleKeyUp);
+        window.addEventListener('keyright', this.handleKeyRight);
+        window.addEventListener('keyleft', this.handleKeyLeft);
     }
 
     componentWillUnmount() {
-
+        window.removeEventListener('keydown', this.handleKeyDown);
+        window.removeEventListener('keyup', this.handleKeyUp);
+        window.removeEventListener('keyright', this.handleKeyRight);
+        window.removeEventListener('keyleft', this.handleKeyLeft);
     }
 
     render() {
@@ -51,7 +36,5 @@ class Word extends Component {
         );
     }
 }
-
-Word.propTypes = {};
 
 export default Word;

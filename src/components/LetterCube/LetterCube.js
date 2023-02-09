@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import "./LetterCube.css";
 
-const box = document.querySelector(".box");
 
 class LetterCube extends Component {
     constructor(props) {
@@ -11,35 +10,16 @@ class LetterCube extends Component {
         }
     }
 
-    componentDidMount() {
-        window.addEventListener('keydown', this.handleKeyDown);
-        window.addEventListener('keyup', this.handleKeyUp);
-        window.addEventListener('keyright', this.handleKeyRight);
-        window.addEventListener('keyleft', this.handleKeyLeft);
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener('keydown', this.handleKeyDown);
-        window.removeEventListener('keyup', this.handleKeyUp);
-        window.removeEventListener('keyright', this.handleKeyRight);
-        window.removeEventListener('keyleft', this.handleKeyLeft);
-    }
-
     rotate = (forward) => {
-        if (forward) {
-            this.setState({index: this.state.index + 1});
-            box.style.transform = `rotateX(${this.state.index * 60}deg)`;
-        } else {
-            this.setState({index: this.state.index - 1});
-            box.style.transform = `rotateX(${this.state.index * 60}deg)`;
-        }
+        let nextIndex = forward ? this.state.index + 1 : this.state.index - 1;
+        this.setState({index: nextIndex, transform: `rotateX(${nextIndex * 60}deg)`});
     }
 
     render() {
         return (
             <div className='wrapper'>
                 <div className="container">
-                    <div className="box">
+                    <div className="box" style={{transform: this.state.transform}}>
                         <div className="card" id="face1">X</div>
                         <div className="card" id="face2">Y</div>
                         <div className="card" id="face3">Z</div>
