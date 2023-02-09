@@ -8,6 +8,11 @@ class Word extends Component {
         super(props);
         this.state = {
             focus: 0,
+            firstLetterList: ['A', 'B', 'C', 'D', 'E', 'F'],
+            secondLetterList: ['A', 'B', 'C', 'D', 'E', 'F'],
+            thirdLetterList: ['A', 'B', 'C', 'D', 'E', 'F'],
+            forthLetterList: ['A', 'B', 'C', 'D', 'E', 'F'],
+            fifthLetterList: ['A', 'B', 'C', 'D', 'E', 'F'],
         }
     }
 
@@ -50,11 +55,11 @@ class Word extends Component {
     render() {
         return (
             <div className={'word-div'}>
-                <LetterCube letterList={['A', 'B', 'C', 'D', 'E', 'F']}/>
-                <LetterCube letterList={['A', 'B', 'C', 'D', 'E', 'F']}/>
-                <LetterCube letterList={['A', 'B', 'C', 'D', 'E', 'F']}/>
-                <LetterCube letterList={['A', 'B', 'C', 'D', 'E', 'F']}/>
-                <LetterCube letterList={['A', 'B', 'C', 'D', 'E', 'F']}/>
+                <LetterCube letterList={this.state.firstLetterList}/>
+                <LetterCube letterList={this.state.secondLetterList}/>
+                <LetterCube letterList={this.state.thirdLetterList}/>
+                <LetterCube letterList={this.state.forthLetterList}/>
+                <LetterCube letterList={this.state.fifthLetterList}/>
             </div>
         );
     }

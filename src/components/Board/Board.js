@@ -21,13 +21,17 @@ class Board extends Component {
 
     }
 
+    try_word() {
+
+    }
+
     render() {
         return (
             <div className={'board-div'}>
                 <h1>LET'S PLAY</h1>
                 <div className={'game-mid-div'}>
                     <Word/>
-                    <button id={'try-button'}>PRESS ENTER</button>
+                    <button id={'try-button'} onClick={() => this.try_word()}>PRESS ENTER</button>
                 </div>
                 <Score/>
             </div>
