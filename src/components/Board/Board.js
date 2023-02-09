@@ -33,7 +33,6 @@ class Board extends Component {
     };
 
     play() {
-        console.log(this.state.focusedWord);
         let word = this.state.focusedWord;
         if (!(word in this.state.playedWords)) {
         // if (!(word in this.state.playedWords) && (word in this.dictionary)) {
@@ -49,11 +48,9 @@ class Board extends Component {
         focusedWord[id] = letter;
         focusedWord = focusedWord.join("");
         this.setState({focusedWord});
-        console.log(focusedWord);
     };
 
     initWord = (word) => {
-        console.log(word);
         this.setState({focusedWord: word});
     }
 
