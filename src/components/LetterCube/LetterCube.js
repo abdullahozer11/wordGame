@@ -11,8 +11,8 @@ class LetterCube extends Component {
         }
     }
 
-    rotate = (forward) => {
-        let nextIndex = forward === 1 ? this.state.index + 1 : this.state.index - 1;
+    rotate = (params) => {
+        let nextIndex = params['forward'] ? this.state.index + 1 : this.state.index - 1;
         this.setState({index: nextIndex, transform: `rotateX(${nextIndex * 60}deg)`});
     }
 
@@ -30,10 +30,10 @@ class LetterCube extends Component {
         if (this.props.focus) {
             switch (event.key) {
                 case 'ArrowUp':
-                    this.rotate(1);
+                    this.rotate({forward: false});
                     break;
                 case 'ArrowDown':
-                    this.rotate(-1);
+                    this.rotate({forward: true});
                     break;
                 default:
                     break;
@@ -67,8 +67,8 @@ class LetterCube extends Component {
                     </div>
                     <div className={'border'} style={{display: (this.props.focus ? 'block' : 'none')}}/>
                 </div>
-                <button className={'cube-ctrl-button'} id="nextButton" onClick={() => this.rotate(1)}>Next</button>
-                <button className={'cube-ctrl-button'} id="prevButton" onClick={() => this.rotate(-1)}>Previous</button>
+                <button className={'cube-ctrl-button'} id="nextButton" onClick={() => this.rotate({forward: true})}>Next</button>
+                <button className={'cube-ctrl-button'} id="prevButton" onClick={() => this.rotate({forward: false})}>Previous</button>
             </div>
         );
     }

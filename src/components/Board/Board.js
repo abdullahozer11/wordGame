@@ -10,18 +10,26 @@ class Board extends Component {
     }
 
     componentDidMount() {
-        window.addEventListener('keyenter', this.handleKeyEnter);
+        window.addEventListener('keydown', this.handleKeyDown);
+        window.addEventListener('keyup', this.handleKeyUp);
     }
 
     componentWillUnmount() {
-        window.removeEventListener('keyenter', this.handleKeyEnter);
+        window.removeEventListener('keydown', this.handleKeyDown);
+        window.removeEventListener('keyup', this.handleKeyUp);
     }
 
-    handleKeyEnter() {
+    handleKeyDown = (event) => {
+        switch (event.key) {
+            case 'Enter':
+                this.play();
+                break;
+            default:
+                break;
+        }
+    };
 
-    }
-
-    try_word() {
+    play() {
 
     }
 
@@ -31,7 +39,7 @@ class Board extends Component {
                 <h1>LET'S PLAY</h1>
                 <div className={'game-mid-div'}>
                     <Word/>
-                    <button id={'try-button'} onClick={() => this.try_word()}>PRESS ENTER</button>
+                    <button id={'try-button'} onClick={() => this.play()}>PRESS ENTER</button>
                 </div>
                 <Score/>
             </div>
