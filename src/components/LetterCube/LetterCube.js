@@ -42,8 +42,8 @@ class LetterCube extends Component {
                         </div>
                     </div>
                 </div>
-                <button id="nextButton" onClick={() => this.rotate(1)}>Next</button>
-                <button id="prevButton" onClick={() => this.rotate(-1)}>Previous</button>
+                <button className={'cube-ctrl-button'} id="nextButton" onClick={() => this.rotate(1)}>Next</button>
+                <button className={'cube-ctrl-button'} id="prevButton" onClick={() => this.rotate(-1)}>Previous</button>
             </div>
         );
     }

@@ -24,14 +24,12 @@ class Word extends Component {
 
     render() {
         return (
-            <div>
-                <div className={'wordWrapper'}>
-                    <LetterCube/>
-                    <LetterCube/>
-                    <LetterCube/>
-                    <LetterCube/>
-                    <LetterCube/>
-                </div>
+            <div className={'word-div'}>
+                <LetterCube/>
+                <LetterCube/>
+                <LetterCube/>
+                <LetterCube/>
+                <LetterCube/>
             </div>
         );
     }

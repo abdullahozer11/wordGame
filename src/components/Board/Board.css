@@ -1,0 +1,22 @@
+.board-div {
+    text-align: center;
+}
+
+.board-div h1 {
+    padding-top: 4vh;
+    font-size: 8vh;
+}
+
+#try-button{
+    font-size: 6vh;
+    width: 4em;
+    height: 5em;
+    margin: auto;
+    margin-right: 1.5em;
+    margin-top: 2.5em;
+}
+
+.game-mid-div {
+    display: flex;
+    flex-direction: row;
+}

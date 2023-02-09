@@ -18,8 +18,12 @@ class Board extends Component {
 
     render() {
         return (
-            <div>
-                <Word/>
+            <div className={'board-div'}>
+                <h1>LET'S PLAY</h1>
+                <div className={'game-mid-div'}>
+                    <Word/>
+                    <button id={'try-button'}>PRESS ENTER</button>
+                </div>
                 <Score/>
             </div>
         );
