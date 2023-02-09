@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 import Word from "../Word/Word";
 import "./Board.css";
 import Score from "../Score/Score";
@@ -10,32 +9,11 @@ class Board extends Component {
         super(props);
     }
 
-    componentWillMount() {
-
-    }
-
     componentDidMount() {
-
     }
 
-    componentWillReceiveProps(nextProps) {
-
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-
-    }
 
     componentWillUnmount() {
-
     }
 
     render() {
@@ -47,7 +25,5 @@ class Board extends Component {
         );
     }
 }
-
-Board.propTypes = {};
 
 export default Board;

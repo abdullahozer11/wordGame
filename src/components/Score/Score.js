@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 import "./Score.css";
 
 
@@ -8,27 +7,7 @@ class Score extends Component {
         super(props);
     }
 
-    componentWillMount() {
-
-    }
-
     componentDidMount() {
-
-    }
-
-    componentWillReceiveProps(nextProps) {
-
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-
-    }
-
-    componentDidUpdate(prevProps, prevState) {
 
     }
 
@@ -44,7 +23,5 @@ class Score extends Component {
         );
     }
 }
-
-Score.propTypes = {};
 
 export default Score;
