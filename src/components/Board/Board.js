@@ -3,8 +3,7 @@ import Word from "../Word/Word";
 import "./Board.css";
 import Score from "../Score/Score";
 
-
-const fs = require('fs');
+const dictionary = require('../../dictionary.js');
 
 class Board extends Component {
     constructor(props) {
@@ -37,6 +36,7 @@ class Board extends Component {
     play() {
         let word = this.state.focusedWord;
         if (!this.state.playedWords.includes(word) && (this.isWordValid(word))) {
+            console.log(this.isWordValid(word));
             this.setState({
                 score: this.state.score + 1,
                 playedWords: [...this.state.playedWords, word],
@@ -44,21 +44,8 @@ class Board extends Component {
         }
     }
 
-    async isWordValid(word) {
-        const dictionary = await this.readDictionaryFile();
+    isWordValid(word) {
         return dictionary.includes(word);
-    }
-
-    async readDictionaryFile() {
-        return new Promise((resolve, reject) => {
-            fs.readFile('../../dictionary.txt', 'utf-8', (err, data) => {
-                if (err) {
-                    reject(err);
-                } else {
-                    resolve(data.split('\n'));
-                }
-            });
-        });
     }
 
     focusedWordChange = (id, letter) => {
