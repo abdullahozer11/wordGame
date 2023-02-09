@@ -1,10 +1,10 @@
+.letter-wrapper {
+    width: 40rem;
+}
+
 .container {
     height: 40rem;
     margin: 25rem 7.5rem 0 7.5rem;
-}
-
-.letter-wrapper {
-    width: 40rem;
 }
 
 .box {
