@@ -10,10 +10,15 @@ class Board extends Component {
     }
 
     componentDidMount() {
+        window.addEventListener('keyenter', this.handleKeyEnter);
     }
 
-
     componentWillUnmount() {
+        window.removeEventListener('keyenter', this.handleKeyEnter);
+    }
+
+    handleKeyEnter() {
+
     }
 
     render() {

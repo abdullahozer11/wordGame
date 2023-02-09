@@ -23,22 +23,22 @@ class LetterCube extends Component {
                 <div className="container">
                     <div className="box" style={{transform: this.state.transform}}>
                         <div className="card" id="face1">
-                            <div className={'letterTextWrapper'}>X</div>
+                            <div className={'letterTextWrapper'}>{this.props.letterList[0]}</div>
                         </div>
                         <div className="card" id="face2">
-                            <div className={'letterTextWrapper'}>Y</div>
+                            <div className={'letterTextWrapper'}>{this.props.letterList[1]}</div>
                         </div>
                         <div className="card" id="face3">
-                            <div className={'letterTextWrapper'}>Z</div>
+                            <div className={'letterTextWrapper'}>{this.props.letterList[2]}</div>
                         </div>
                         <div className="card" id="face4">
-                            <div className={'letterTextWrapper'}>A</div>
+                            <div className={'letterTextWrapper'}>{this.props.letterList[3]}</div>
                         </div>
                         <div className="card" id="face5">
-                            <div className={'letterTextWrapper'}>E</div>
+                            <div className={'letterTextWrapper'}>{this.props.letterList[4]}</div>
                         </div>
                         <div className="card" id="face6">
-                            <div className={'letterTextWrapper'}>C</div>
+                            <div className={'letterTextWrapper'}>{this.props.letterList[5]}</div>
                         </div>
                     </div>
                 </div>

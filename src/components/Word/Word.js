@@ -6,6 +6,9 @@ import "./Word.css";
 class Word extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            focus: 0,
+        }
     }
 
     componentDidMount() {
@@ -17,21 +20,42 @@ class Word extends Component {
     }
 
     componentWillUnmount() {
-        window.removeEventListener('keyenter', this.handleKeyEnter);
         window.removeEventListener('keydown', this.handleKeyDown);
         window.removeEventListener('keyup', this.handleKeyUp);
         window.removeEventListener('keyright', this.handleKeyRight);
         window.removeEventListener('keyleft', this.handleKeyLeft);
     }
 
+    handleKeyDown() {
+
+    }
+
+    handleKeyUp() {
+
+    }
+
+    handleKeyRight() {
+        let newFocus = this.state.focus + 1;
+        this.setState({
+            focus: newFocus,
+        })
+    }
+
+    handleKeyLeft() {
+        let newFocus = this.state.focus - 1;
+        this.setState({
+            focus: newFocus,
+        })
+    }
+
     render() {
         return (
             <div className={'word-div'}>
-                <LetterCube/>
-                <LetterCube/>
-                <LetterCube/>
-                <LetterCube/>
-                <LetterCube/>
+                <LetterCube letterList={['A', 'B', 'C', 'D', 'E', 'F']}/>
+                <LetterCube letterList={['A', 'B', 'C', 'D', 'E', 'F']}/>
+                <LetterCube letterList={['A', 'B', 'C', 'D', 'E', 'F']}/>
+                <LetterCube letterList={['A', 'B', 'C', 'D', 'E', 'F']}/>
+                <LetterCube letterList={['A', 'B', 'C', 'D', 'E', 'F']}/>
             </div>
         );
     }
