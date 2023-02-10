@@ -10,10 +10,10 @@ class Word extends Component {
             focus: 0,
             letters: [
                 ['A', 'B', 'C', 'D', 'E', 'F'],
-                ['P', 'B', 'C', 'D', 'E', 'F'],
-                ['P', 'B', 'C', 'D', 'E', 'F'],
-                ['L', 'B', 'C', 'D', 'E', 'F'],
-                ['A', 'E', 'C', 'D', 'E', 'F']
+                ['A', 'B', 'C', 'D', 'E', 'F'],
+                ['A', 'B', 'C', 'D', 'E', 'F'],
+                ['A', 'B', 'C', 'D', 'E', 'F'],
+                ['A', 'B', 'C', 'D', 'E', 'F']
             ]
         }
     }
