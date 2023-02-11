@@ -34,31 +34,73 @@ class Welcome extends Component {
         return (
             <div className={'tiles-div'}>
                 <div className={'tiles-row'}>
-                    <div className={'tile'}/>
-                    <div className={'tile'}/>
-                    <div className={'tile'}/>
-                    <div className={'tile'}/>
-                    <div className={'tile'}/>
-                    <div className={'tile'}/>
-                    <div className={'tile'}/>
+                    <div className={'tile-box'}>
+                        <div className={'tile'}/>
+                    </div>
+                    <div className={'tile-box'}>
+                        <div className={'tile'}/>
+                    </div>
+                    <div className={'tile-box'}>
+                        <div className={'tile'}/>
+                    </div>
+                    <div className={'tile-box'}>
+                        <div className={'tile'}/>
+                    </div>
+                    <div className={'tile-box'}>
+                        <div className={'tile'}/>
+                    </div>
+                    <div className={'tile-box'}>
+                        <div className={'tile'}/>
+                    </div>
+                    <div className={'tile-box'}>
+                        <div className={'tile'}/>
+                    </div>
                 </div>
                 <div className={'tiles-row'}>
-                    <div className={'tile'}/>
-                    <div className={'tile'}/>
-                    <div className={'tile'}/>
-                    <div className={'tile'}/>
-                    <div className={'tile'}/>
-                    <div className={'tile'}/>
-                    <div className={'tile'}/>
+                    <div className={'tile-box'}>
+                        <div className={'tile'}/>
+                    </div>
+                    <div className={'tile-box'}>
+                        <div className={'tile'}/>
+                    </div>
+                    <div className={'tile-box'}>
+                        <div className={'tile'}/>
+                    </div>
+                    <div className={'tile-box'}>
+                        <div className={'tile'}/>
+                    </div>
+                    <div className={'tile-box'}>
+                        <div className={'tile'}/>
+                    </div>
+                    <div className={'tile-box'}>
+                        <div className={'tile'}/>
+                    </div>
+                    <div className={'tile-box'}>
+                        <div className={'tile'}/>
+                    </div>
                 </div>
                 <div className={'tiles-row'}>
-                    <div className={'tile'}/>
-                    <div className={'tile'}/>
-                    <div className={'tile'}/>
-                    <div className={'tile'}/>
-                    <div className={'tile'}/>
-                    <div className={'tile'}/>
-                    <div className={'tile'}/>
+                    <div className={'tile-box'}>
+                        <div className={'tile'}/>
+                    </div>
+                    <div className={'tile-box'}>
+                        <div className={'tile'}/>
+                    </div>
+                    <div className={'tile-box'}>
+                        <div className={'tile'}/>
+                    </div>
+                    <div className={'tile-box'}>
+                        <div className={'tile'}/>
+                    </div>
+                    <div className={'tile-box'}>
+                        <div className={'tile'}/>
+                    </div>
+                    <div className={'tile-box'}>
+                        <div className={'tile'}/>
+                    </div>
+                    <div className={'tile-box'}>
+                        <div className={'tile'}/>
+                    </div>
                 </div>
             </div>
         );
