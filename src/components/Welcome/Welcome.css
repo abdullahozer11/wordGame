@@ -1,4 +1,4 @@
-.tiles-div {
+.welcome-div {
     position: absolute;
     top: 27%;
     left: 27.6%;
@@ -19,6 +19,7 @@
 
 .tile-box {
     transform-style: preserve-3d;
+    transform-origin: center;
     transition: transform .5s linear;
     border: 4px solid #280c06;
     border-radius: 30px;
@@ -30,8 +31,9 @@
     opacity: 95%;
     height: 100%;
     width: 100%;
-    transform: rotateX(0deg);
+    transform: rotateX(90deg);
     /*transform: rotateX(180deg);*/
+    perspective: 1000px;
 }
 
 .tile-front, .tile-back{
@@ -41,17 +43,19 @@
     height: 100%;
     width: 100%;
     font-size: 96px;
+    transform-origin: center;
 }
 
 .tile-front {
-    transform: translateZ(1rem);
+    transform: translateZ(100px);
 }
 
 .tile-back {
-    /*transform: rotateX(180deg) translateZ(-1rem);*/
+    transform: rotateX(180deg) translateZ(-100px);
+    transition: transform 0.5s linear;
 }
 
-@keyframes welcome-animation {
+@keyframes myAnimation {
     from {
         /*transform: rotate(0deg);*/
     }

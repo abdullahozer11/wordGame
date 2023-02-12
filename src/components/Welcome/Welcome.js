@@ -32,95 +32,137 @@ class Welcome extends Component {
 
     render() {
         return (
-            <div className={'tiles-div'}>
+            <div className={'welcome-div'}>
                 <div className={'tiles-row'}>
-                    <div className={'tile-box'}>
-                        <div className={'tile-front'}>X</div>
-                        <div className={'tile-back'}>Y</div>
+                    <div className="tile-container">
+                        <div className={'tile-box'}>
+                            <div className={'tile-front'}>X</div>
+                            <div className={'tile-back'}>Y</div>
+                        </div>
                     </div>
-                    <div className={'tile-box'}>
-                        <div className={'tile-front'}/>
-                        <div className={'tile-back'}/>
+                    <div className="tile-container">
+                        <div className={'tile-box'}>
+                            <div className={'tile-front'}>X</div>
+                            <div className={'tile-back'}>Y</div>
+                        </div>
                     </div>
-                    <div className={'tile-box'}>
-                        <div className={'tile-front'}/>
-                        <div className={'tile-back'}/>
+                    <div className="tile-container">
+                        <div className={'tile-box'}>
+                            <div className={'tile-front'}>X</div>
+                            <div className={'tile-back'}>Y</div>
+                        </div>
                     </div>
-                    <div className={'tile-box'}>
-                        <div className={'tile-front'}/>
-                        <div className={'tile-back'}/>
+                    <div className="tile-container">
+                        <div className={'tile-box'}>
+                            <div className={'tile-front'}>X</div>
+                            <div className={'tile-back'}>Y</div>
+                        </div>
                     </div>
-                    <div className={'tile-box'}>
-                        <div className={'tile-front'}/>
-                        <div className={'tile-back'}/>
+                    <div className="tile-container">
+                        <div className={'tile-box'}>
+                            <div className={'tile-front'}>X</div>
+                            <div className={'tile-back'}>Y</div>
+                        </div>
                     </div>
-                    <div className={'tile-box'}>
-                        <div className={'tile-front'}/>
-                        <div className={'tile-back'}/>
+                    <div className="tile-container">
+                        <div className={'tile-box'}>
+                            <div className={'tile-front'}>X</div>
+                            <div className={'tile-back'}>Y</div>
+                        </div>
                     </div>
-                    <div className={'tile-box'}>
-                        <div className={'tile-front'}/>
-                        <div className={'tile-back'}/>
+                    <div className="tile-container">
+                        <div className={'tile-box'}>
+                            <div className={'tile-front'}>X</div>
+                            <div className={'tile-back'}>Y</div>
+                        </div>
                     </div>
                 </div>
                 <div className={'tiles-row'}>
-                    <div className={'tile-box'}>
-                        <div className={'tile-front'}/>
-                        <div className={'tile-back'}/>
+                    <div className="tile-container">
+                        <div className={'tile-box'}>
+                            <div className={'tile-front'}>X</div>
+                            <div className={'tile-back'}>Y</div>
+                        </div>
                     </div>
-                    <div className={'tile-box'}>
-                        <div className={'tile-front'}/>
-                        <div className={'tile-back'}/>
+                    <div className="tile-container">
+                        <div className={'tile-box'}>
+                            <div className={'tile-front'}>X</div>
+                            <div className={'tile-back'}>Y</div>
+                        </div>
                     </div>
-                    <div className={'tile-box'}>
-                        <div className={'tile-front'}/>
-                        <div className={'tile-back'}/>
+                    <div className="tile-container">
+                        <div className={'tile-box'}>
+                            <div className={'tile-front'}>X</div>
+                            <div className={'tile-back'}>Y</div>
+                        </div>
                     </div>
-                    <div className={'tile-box'}>
-                        <div className={'tile-front'}/>
-                        <div className={'tile-back'}/>
+                    <div className="tile-container">
+                        <div className={'tile-box'}>
+                            <div className={'tile-front'}>X</div>
+                            <div className={'tile-back'}>Y</div>
+                        </div>
                     </div>
-                    <div className={'tile-box'}>
-                        <div className={'tile-front'}/>
-                        <div className={'tile-back'}/>
+                    <div className="tile-container">
+                        <div className={'tile-box'}>
+                            <div className={'tile-front'}>X</div>
+                            <div className={'tile-back'}>Y</div>
+                        </div>
                     </div>
-                    <div className={'tile-box'}>
-                        <div className={'tile-front'}/>
-                        <div className={'tile-back'}/>
+                    <div className="tile-container">
+                        <div className={'tile-box'}>
+                            <div className={'tile-front'}>X</div>
+                            <div className={'tile-back'}>Y</div>
+                        </div>
                     </div>
-                    <div className={'tile-box'}>
-                        <div className={'tile-front'}/>
-                        <div className={'tile-back'}/>
+                    <div className="tile-container">
+                        <div className={'tile-box'}>
+                            <div className={'tile-front'}>X</div>
+                            <div className={'tile-back'}>Y</div>
+                        </div>
                     </div>
                 </div>
                 <div className={'tiles-row'}>
-                    <div className={'tile-box'}>
-                        <div className={'tile-front'}/>
-                        <div className={'tile-back'}/>
+                    <div className="tile-container">
+                        <div className={'tile-box'}>
+                            <div className={'tile-front'}>X</div>
+                            <div className={'tile-back'}>Y</div>
+                        </div>
                     </div>
-                    <div className={'tile-box'}>
-                        <div className={'tile-front'}/>
-                        <div className={'tile-back'}/>
+                    <div className="tile-container">
+                        <div className={'tile-box'}>
+                            <div className={'tile-front'}>X</div>
+                            <div className={'tile-back'}>Y</div>
+                        </div>
                     </div>
-                    <div className={'tile-box'}>
-                        <div className={'tile-front'}/>
-                        <div className={'tile-back'}/>
+                    <div className="tile-container">
+                        <div className={'tile-box'}>
+                            <div className={'tile-front'}>X</div>
+                            <div className={'tile-back'}>Y</div>
+                        </div>
                     </div>
-                    <div className={'tile-box'}>
-                        <div className={'tile-front'}/>
-                        <div className={'tile-back'}/>
+                    <div className="tile-container">
+                        <div className={'tile-box'}>
+                            <div className={'tile-front'}>X</div>
+                            <div className={'tile-back'}>Y</div>
+                        </div>
                     </div>
-                    <div className={'tile-box'}>
-                        <div className={'tile-front'}/>
-                        <div className={'tile-back'}/>
+                    <div className="tile-container">
+                        <div className={'tile-box'}>
+                            <div className={'tile-front'}>X</div>
+                            <div className={'tile-back'}>Y</div>
+                        </div>
                     </div>
-                    <div className={'tile-box'}>
-                        <div className={'tile-front'}/>
-                        <div className={'tile-back'}/>
+                    <div className="tile-container">
+                        <div className={'tile-box'}>
+                            <div className={'tile-front'}>X</div>
+                            <div className={'tile-back'}>Y</div>
+                        </div>
                     </div>
-                    <div className={'tile-box'}>
-                        <div className={'tile-front'}/>
-                        <div className={'tile-back'}/>
+                    <div className="tile-container">
+                        <div className={'tile-box'}>
+                            <div className={'tile-front'}>X</div>
+                            <div className={'tile-back'}>Y</div>
+                        </div>
                     </div>
                 </div>
             </div>
