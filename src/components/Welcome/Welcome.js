@@ -35,7 +35,7 @@ class Welcome extends Component {
         return (
             <div className={'welcome-div'}>
                 <div className={'tiles-row'}>
-                    <Tile onClick={(e) =>this.handleClick(e.target)}/>
+                    <Tile/>
                     <Tile/>
                     <Tile/>
                     <Tile/>
