@@ -22,6 +22,6 @@
     width: 100%;
     transform-style: preserve-3d;
     color: white;
-    line-height: 9.6rem;
-    font-size: 96px;
+    line-height: 12vh;
+    font-size: 4.5vmin;
 }

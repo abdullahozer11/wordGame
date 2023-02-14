@@ -7,14 +7,15 @@ class Welcome extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            text: [['W', 'E', 'L', 'C', 'O', 'M', 'E'],
+            text: [['*', '*', '*', '*', '*', '*', '*'],
                    ['W', 'E', 'L', 'C', 'O', 'M', 'E'],
-                   ['W', 'E', 'L', 'C', 'O', 'M', 'E']]
+                   ['*', '*', '*', '*', '*', '*', '*']]
         }
     }
 
     componentDidMount() {
         window.addEventListener('keydown', this.handleKeyDown);
+        this.animateWelcomeMessage();
     }
 
     componentWillUnmount() {
@@ -67,6 +68,16 @@ class Welcome extends Component {
                 </div>
             </div>
         );
+    }
+
+    animateWelcomeMessage() {
+        // wait 2 seconds
+        setTimeout(() => {
+            this.setState({text: [['O', '*', '*', '*', '*', '*', '*'],
+                                  ['W', 'E', 'L', 'C', 'O', 'M', 'E'],
+                                  ['*', '*', '*', '*', '*', '*', '*']]
+            });
+        }, 2000);
     }
 }
 
