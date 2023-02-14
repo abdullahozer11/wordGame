@@ -8,15 +8,16 @@ class Tile extends Component {
         super(props);
         this.state = {
             letter: '',
-            once: true
         }
         this.tileRef = React.createRef();
+        this.componentDidMountCalled = false;
     }
 
     componentDidMount() {
-        if (this.state.once) {
-            this.setState({letter: this.props.letter, once: false});
+        if (!this.componentDidMountCalled) {
+            this.componentDidMountCalled = true;
             this.tileRef.current.textContent = this.props.letter;
+            this.setState({letter: this.props.letter});
         }
     }
 
