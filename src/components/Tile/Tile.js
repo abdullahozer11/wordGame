@@ -11,6 +11,7 @@ class Tile extends Component {
         }
         this.tileRef = React.createRef();
         this.componentDidMountCalled = false;
+        this.iteration = 0;
     }
 
     componentDidMount() {
@@ -29,10 +30,13 @@ class Tile extends Component {
 
     rotateTile(currentTarget) {
         const nextLetter = this.props.letter;
-        gsap.to(currentTarget, {rotateX: 90, duration: 2, ease: 'linear'});
-        gsap.to(currentTarget, {rotateX: 270, duration: 0, delay: 2});
-        gsap.set(currentTarget, {textContent: nextLetter, delay: 2});
-        gsap.to(currentTarget, {rotateX: 360, duration: 2, delay: 2, ease: 'linear'});
+        const duration = (Math.floor(Math.random() * 10) + 10) / 10;
+        const delay = duration;
+        gsap.to(currentTarget, {rotateX: 90 + this.iteration * 360, duration: duration, ease: 'linear'});
+        gsap.to(currentTarget, {rotateX: 270 + this.iteration * 360, duration: 0, delay: delay});
+        gsap.set(currentTarget, {textContent: nextLetter, delay: delay});
+        gsap.to(currentTarget, {rotateX: 360 + this.iteration * 360, duration: duration, delay: delay, ease: 'linear'});
+        this.iteration++;
         this.setState({letter: nextLetter});
     }
 

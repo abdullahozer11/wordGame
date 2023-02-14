@@ -73,11 +73,15 @@ class Welcome extends Component {
     animateWelcomeMessage() {
         // wait 2 seconds
         setTimeout(() => {
-            this.setState({text: [['O', '*', '*', '*', '*', '*', '*'],
-                                  ['W', 'E', 'L', 'C', 'O', 'M', 'E'],
-                                  ['*', '*', '*', '*', '*', '*', '*']]
-            });
-        }, 2000);
+            this.setState({text: [['*', 'L', 'E', 'T', 'S', '*', '*'],
+                                  ['*', 'P', 'L', 'A', 'Y', '!', '*'],
+                                  ['*', 'W', 'O', 'R', 'D', 'S', '*']]});
+            setTimeout(() => {
+                this.setState({text: [['*', 'P', 'R', 'E', 'S', 'S', '*'],
+                                  ['*', 'E', 'N', 'T', 'E', 'R', '*'],
+                                  ['&', 'S', 'T', 'A', 'R', 'T', '.']]});
+            }, 4000);
+        }, 4000);
     }
 }
 
