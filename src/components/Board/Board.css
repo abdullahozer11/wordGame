@@ -2,25 +2,39 @@
     width: 100vw;
     height: 100vh;
     text-align: center;
+    background-color: snow;
 }
 
 .board-div h1 {
     padding-top: 4vh;
-    font-size: 8vh;
+    font-size: 10vh;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
 }
 
 #try-button{
-    width: 200px;
-    height: 400px;
-    font-size: 3vh;
-    margin: auto;
-    margin-right: 6vw;
-    margin-top: 12vh;
+    width: 50rem;
+    height: 40rem;
+    font-size: 10rem;
+    margin: 16vh 6vw auto auto;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    border: 2px solid #ccc;
+    font-family: 'sans-serif';
+    cursor: pointer;
+    box-shadow: 0 0 5px #ccc;
 }
 
 .game-mid-div {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    margin: 10vh;
 }
 
 .scorewrapper {
@@ -28,5 +42,5 @@
 }
 
 .scorewrapper p {
-    font-size: 2.5em;
+    font-size: 3vh;
 }

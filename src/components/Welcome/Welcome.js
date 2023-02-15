@@ -19,7 +19,7 @@ class Welcome extends Component {
 
     render() {
         return (
-            <div className="container">
+            <div className="welcome-container">
                 <div className={'welcome-div'}>
                     <div className={'tiles-row'}>
                         <Tile letter={this.state.text[0][0]}/>
@@ -54,20 +54,17 @@ class Welcome extends Component {
     }
 
     animateWelcomeMessage() {
-        // wait 2 seconds
+        this.setState({
+            text: [['*', 'L', 'E', 'T', 'S', '*', '*'],
+                ['*', 'P', 'L', 'A', 'Y', '!', '*'],
+                ['*', 'W', 'O', 'R', 'D', 'S', '*']]
+        });
         setTimeout(() => {
             this.setState({
-                text: [['*', 'L', 'E', 'T', 'S', '*', '*'],
-                    ['*', 'P', 'L', 'A', 'Y', '!', '*'],
-                    ['*', 'W', 'O', 'R', 'D', 'S', '*']]
+                text: [['*', 'P', 'R', 'E', 'S', 'S', '*'],
+                    ['*', 'E', 'N', 'T', 'E', 'R', '*'],
+                    ['*', 'S', 'T', 'A', 'R', 'T', '.']]
             });
-            setTimeout(() => {
-                this.setState({
-                    text: [['*', 'P', 'R', 'E', 'S', 'S', '*'],
-                        ['*', 'E', 'N', 'T', 'E', 'R', '*'],
-                        ['&', 'S', 'T', 'A', 'R', 'T', '.']]
-                });
-            }, 4000);
         }, 4000);
     }
 }

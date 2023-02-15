@@ -53,7 +53,9 @@ class Board extends Component {
                 <h1>WORDS</h1>
                 <div className={'game-mid-div'}>
                     <Word focusedWordChange={this.focusedWordChange} initWord={this.initWord}/>
-                    <button id={'try-button'} onClick={() => this.play()}>PRESS ENTER</button>
+                    <div className="button-container">
+                        <button id={'try-button'} onClick={() => this.play()}>PRESS ENTER</button>
+                    </div>
                 </div>
                 <Score score={this.state.score}/>
             </div>
