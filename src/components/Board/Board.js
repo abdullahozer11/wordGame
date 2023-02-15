@@ -15,20 +15,34 @@ class Board extends Component {
         }
     }
 
-    handleKeyPress = (event) => {
-        if (event.key === 'Enter') {
-            this.play();
+    componentDidMount() {
+        window.addEventListener('keydown', this.handleKeyDown);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('keydown', this.handleKeyDown);
+    }
+
+    handleKeyDown = (event) => {
+        switch (event.key) {
+            case 'Enter':
+                this.play();
+                break;
+            default:
+                break;
         }
     }
 
     play() {
         let word = this.state.focusedWord;
         if (!this.state.playedWords.includes(word) && (this.isWordValid(word))) {
-            console.log(this.isWordValid(word));
             this.setState({
                 score: this.state.score + 1,
                 playedWords: [...this.state.playedWords, word],
             });
+            this.indicateCorrectWord();
+        } else {
+            this.indicateIncorrectWord();
         }
     }
 
@@ -49,7 +63,7 @@ class Board extends Component {
 
     render() {
         return (
-            <div className={'board-div'} onKeyPress={this.handleKeyPress}>
+            <div className={'board-div'}>
                 <h1>WORDS</h1>
                 <div className={'game-mid-div'}>
                     <Word focusedWordChange={this.focusedWordChange} initWord={this.initWord}/>
@@ -60,6 +74,22 @@ class Board extends Component {
                 <Score score={this.state.score}/>
             </div>
         );
+    }
+
+    indicateCorrectWord() {
+        let button = document.getElementById('try-button');
+        button.style.backgroundColor = 'green';
+        setTimeout(() => {
+            button.style.backgroundColor = '';
+        }, 1000);
+    }
+
+    indicateIncorrectWord() {
+        let button = document.getElementById('try-button');
+        button.style.backgroundColor = 'red';
+        setTimeout(() => {
+            button.style.backgroundColor = '';
+        }, 1000);
     }
 }
 
