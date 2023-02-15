@@ -15,23 +15,11 @@ class Board extends Component {
         }
     }
 
-    componentDidMount() {
-        window.addEventListener('keydown', this.handleKeyDown);
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener('keydown', this.handleKeyDown);
-    }
-
-    handleKeyDown = (event) => {
-        switch (event.key) {
-            case 'Enter':
-                this.play();
-                break;
-            default:
-                break;
+    handleKeyPress = (event) => {
+        if (event.key === 'Enter') {
+            this.play();
         }
-    };
+    }
 
     play() {
         let word = this.state.focusedWord;
@@ -61,8 +49,8 @@ class Board extends Component {
 
     render() {
         return (
-            <div className={'board-div'}>
-                <h1>LET'S PLAY</h1>
+            <div className={'board-div'} onKeyPress={this.handleKeyPress}>
+                <h1>WORDS</h1>
                 <div className={'game-mid-div'}>
                     <Word focusedWordChange={this.focusedWordChange} initWord={this.initWord}/>
                     <button id={'try-button'} onClick={() => this.play()}>PRESS ENTER</button>
