@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import LetterCube from "../LetterCube/LetterCube";
 import "./Word.css";
 
-const consonants = 'bcdfghjklmnpqrstvwxyz';
-const vowels = 'aeiou';
+const consonants = 'BCDFGHJKLMNPQRSTVWXYZ';
+const vowels = 'AEIOU';
 
 
 class Word extends Component {
@@ -68,20 +68,31 @@ class Word extends Component {
         );
     }
 
-    getRandomCharacter(str, count) {
-        return str.charAt(Math.floor(Math.random() * str.length));
-        // todo implement count
+    getRandomCharacters(characters, count) {
+        let result = "";
+        let selectedChars = new Set();
+        while (result.length < count) {
+            let char = characters.charAt(Math.floor(Math.random() * characters.length));
+            if (!selectedChars.has(char)) {
+                selectedChars.add(char);
+                result += char;
+            }
+        }
+        return result;
     }
 
     setRandomLetters() {
+        let _vovels;
+        let _consonants;
         for (let i = 0; i < 5; i++) {
-            for (let j = 0; j < 6; j++) {
-                if (i === 0 || i === 4) {
-                    this.letters[i][j] = this.getRandomCharacter(vowels);
-                } else {
-                    this.letters[i][j] = this.getRandomCharacter(consonants);
-                }
-            }
+            _vovels = this.getRandomCharacters(vowels, 2);
+            _consonants = this.getRandomCharacters(consonants, 4);
+            this.letters[i][0] = _vovels.charAt(0);
+            this.letters[i][1] = _vovels.charAt(1);
+            this.letters[i][2] = _consonants.charAt(0);
+            this.letters[i][3] = _consonants.charAt(1);
+            this.letters[i][4] = _consonants.charAt(2);
+            this.letters[i][5] = _consonants.charAt(3);
         }
     }
 }
