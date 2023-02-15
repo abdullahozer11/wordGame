@@ -60,7 +60,12 @@ class LetterCube extends Component {
         return (
             <div className={'letter-wrapper'}>
                 <button className={'cube-ctrl-button'} id="upButton"
-                        onClick={() => this.rotate({forward: false})}>Up
+                        onClick={() => this.rotate({forward: false})}>
+                    <svg viewBox="0 0 50 30">
+                        <path d="m 5 10 L 25 3 L 45 10 L 45 12 M 45 12 L 25 6 L 5 12 L 5 10 M 5 17
+                                 L 25 10 L 45 17 L 45 19 L 25 13 L 5 19 L 5 17 M 5 24 L 25 17 L 45 24
+                                 L 45 26 L 25 20 L 5 26"/>
+                    </svg>
                 </button>
                 <div className="container">
                     <div className="box" style={{transform: this.state.transform}}>
@@ -86,7 +91,11 @@ class LetterCube extends Component {
                     <div className={'border'} style={{display: (this.props.focus ? 'block' : 'none')}}/>
                 </div>
                 <button className={'cube-ctrl-button'} id="downButton"
-                        onClick={() => this.rotate({forward: true})}>Down
+                        onClick={() => this.rotate({forward: true})}>
+                    <svg viewBox="0 0 50 30">
+                        <path d="m 45 20 L 25 27 L 5 20 L 5 18 M 5 18 L 25 24 L 45 18 L 45 20 M 45 13 L 25 20
+                        L 5 13 L 5 11 L 25 17 L 45 11 L 45 13 M 45 6 L 25 13 L 5 6 L 5 4 L 25 10 L 45 4"/>
+                    </svg>
                 </button>
             </div>
         );

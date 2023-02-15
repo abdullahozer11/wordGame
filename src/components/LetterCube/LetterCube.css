@@ -31,11 +31,11 @@
 }
 
 .border {
-    position: absolute;
+    position: relative;
     height: 23rem;
     width: 23rem;
     border: 2rem solid black;
-    top: 43.5rem;
+    top: -25rem;
     transform: translateX(-1rem) translateY(-1rem);
 }
 
@@ -71,6 +71,15 @@
     font-size: 5rem;
     background: white;
     color: #282c34;
+    width: 20rem;
+    height: 10rem;
+    border: 0.2rem solid #282c34;
+    border-radius: 15px;
+}
+
+.cube-ctrl-button svg {
+    width: 10rem;
+    margin-top: 1rem;
 }
 
 #upButton {

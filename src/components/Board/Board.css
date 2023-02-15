@@ -17,11 +17,11 @@
     text-align: center;
 }
 
-#try-button{
-    width: 50rem;
-    height: 40rem;
-    font-size: 10rem;
-    margin: 16vh 6vw auto auto;
+#try-button {
+    margin: auto;
+    width: 40rem;
+    height: 30rem;
+    font-size: 8rem;
     border-radius: 5px;
     background-color: #f0f0f0;
     border: 2px solid #ccc;
@@ -35,6 +35,15 @@
     flex-direction: row;
     justify-content: center;
     margin: 10vh;
+}
+
+@media only screen and (max-width: 900px) {
+    .game-mid-div {
+        flex-direction: column;
+    }
+    .button-container {
+        margin-top: 10vh;
+    }
 }
 
 .scorewrapper {
