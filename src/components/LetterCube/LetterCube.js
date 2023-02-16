@@ -9,6 +9,8 @@ class LetterCube extends Component {
             index: 0,
             transform: '',
             focusedLetter: this.props.letterList[0],
+            touchStartY: null,
+            source: false,
         }
     }
 
@@ -35,10 +37,12 @@ class LetterCube extends Component {
 
     componentDidMount() {
         window.addEventListener('keydown', this.handleKeyDown);
+        window.addEventListener('touchend', this.handleTouchEnd);
     }
 
     componentWillUnmount() {
         window.removeEventListener('keydown', this.handleKeyDown);
+        window.removeEventListener('touchend', this.handleTouchEnd);
     }
 
     handleKeyDown = (event) => {
@@ -58,7 +62,7 @@ class LetterCube extends Component {
 
     render() {
         return (
-            <div className={'letter-wrapper'}>
+            <div className={'letter-wrapper'} onTouchStart={this.handleTouchStart}>
                 <button className={'cube-ctrl-button'} id="upButton"
                         onClick={() => this.rotate({forward: false})}>
                     <svg viewBox="0 0 50 30">
@@ -99,6 +103,21 @@ class LetterCube extends Component {
                 </button>
             </div>
         );
+    }
+
+    handleTouchStart = (event) => {
+        console.log(event.touches[0].clientY);
+        this.setState({touchStartY: event.touches[0].clientY, source: true});
+    }
+
+    handleTouchEnd = (event) => {
+        console.log(event.changedTouches[0].clientY);
+        if (event.changedTouches[0].clientY < this.state.touchStartY && this.state.source) {
+            this.rotate({forward: true});
+        } else if (event.changedTouches[0].clientY > this.state.touchStartY && this.state.source) {
+            this.rotate({forward: false});
+        }
+        this.setState({touchStartY: null, source: false});
     }
 }
 
