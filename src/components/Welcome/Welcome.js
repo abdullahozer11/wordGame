@@ -64,7 +64,7 @@ class Welcome extends Component {
                         <Tile letter={this.state.text[2][6]}/>
                     </div>
                 </div>
-                <button className={'go-button glow'} onClick={() => this.props.startCallBack()}>GO</button>
+                <button className={'go-button start-button glow'} onClick={() => this.props.startCallBack()}>GO</button>
             </div>
         );
     }

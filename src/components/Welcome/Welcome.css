@@ -45,6 +45,23 @@
     line-height: 7.8vh;
 }
 
+.start-button {
+    transition: text-shadow 0.5s linear;
+    animation: text-shadow-animation 2s linear infinite;
+}
+
+@keyframes text-shadow-animation {
+    0% {
+        text-shadow: 0 0 0vh #826850;
+    }
+    50% {
+        text-shadow: 0 0 1vh #826850;
+    }
+    100% {
+        text-shadow: 0 0 0vh #826850;
+    }
+}
+
 @media only screen and (max-width: 900px) {
     .welcome-container {
         background-image: url('../../../images/welcome-mobile.png');
