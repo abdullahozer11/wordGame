@@ -68,7 +68,3 @@
         width: 77%;
     }
 }
-
-.glow {
-    animation: glow 1s ease-in-out infinite alternate;
-}
