@@ -106,12 +106,10 @@ class LetterCube extends Component {
     }
 
     handleTouchStart = (event) => {
-        console.log(event.touches[0].clientY);
         this.setState({touchStartY: event.touches[0].clientY, source: true});
     }
 
     handleTouchEnd = (event) => {
-        console.log(event.changedTouches[0].clientY);
         if (event.changedTouches[0].clientY < this.state.touchStartY && this.state.source) {
             this.rotate({forward: true});
         } else if (event.changedTouches[0].clientY > this.state.touchStartY && this.state.source) {
