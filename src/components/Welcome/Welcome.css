@@ -49,15 +49,18 @@
     .welcome-container {
         background-image: url('../../../images/welcome-mobile.png');
     }
+
     .go-button {
         top: 40.5vh;
         left: 30vw;
         width: 15vw;
         height: 3.7vh;
-        font-size: 3vh;
         border: 2px solid #826850;
         border-radius: 10px;
+        font-size: 1.5vh;
+        line-height: 3.8vh;
     }
+
     .welcome-div {
         top: 38%;
         left: 10.8%;

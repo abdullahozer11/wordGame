@@ -18,12 +18,16 @@ class Game extends Component {
     }
   }
 
+  start = () => {
+    this.setState({ started: true });
+  }
+
   render() {
     const { started } = this.state;
 
     return (
       <div className={'game'} onKeyPress={this.handleKeyPress} tabIndex={0}>
-        {started ? <Board /> : <Welcome />}
+        {started ? <Board /> : <Welcome startCallBack={this.start} />}
       </div>
     );
   }
