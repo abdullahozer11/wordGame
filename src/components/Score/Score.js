@@ -5,8 +5,8 @@ import "./Score.css";
 class Score extends Component {
     render() {
         return (
-            <div className={'scorewrapper'}>
-                <p>Number of words found:</p>
+            <div className={'score-wrapper'}>
+                <p>SCORE:</p>
                 <p>{this.props.score}</p>
             </div>
         );

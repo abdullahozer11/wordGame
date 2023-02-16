@@ -7,9 +7,9 @@ class Welcome extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            text: [['*', '*', '*', '*', '*', '*', '*'],
+            text: [[' ', ' ', ' ', ' ', ' ', ' ', ' '],
                 ['W', 'E', 'L', 'C', 'O', 'M', 'E'],
-                ['*', '*', '*', '*', '*', '*', '*']]
+                [' ', ' ', ' ', ' ', ' ', ' ', ' ']]
         }
     }
 
@@ -55,15 +55,15 @@ class Welcome extends Component {
 
     animateWelcomeMessage() {
         this.setState({
-            text: [['*', 'L', 'E', 'T', 'S', '*', '*'],
-                ['*', 'P', 'L', 'A', 'Y', '!', '*'],
-                ['*', 'W', 'O', 'R', 'D', 'S', '*']]
+            text: [[' ', 'L', 'E', 'T', 'S', ' ', ' '],
+                [' ', 'P', 'L', 'A', 'Y', '!', ' '],
+                [' ', 'W', 'O', 'R', 'D', 'S', ' ']]
         });
         setTimeout(() => {
             this.setState({
-                text: [['*', 'P', 'R', 'E', 'S', 'S', '*'],
-                    ['*', 'E', 'N', 'T', 'E', 'R', '*'],
-                    ['*', 'S', 'T', 'A', 'R', 'T', '.']]
+                text: [[' ', 'P', 'R', 'E', 'S', 'S', ' '],
+                    [' ', 'E', 'N', 'T', 'E', 'R', ' '],
+                    [' ', 'S', 'T', 'A', 'R', 'T', '.']]
             });
         }, 4000);
     }

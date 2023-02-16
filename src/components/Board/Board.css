@@ -5,9 +5,16 @@
     background-color: snow;
 }
 
+@font-face {
+    font-family: 'Monofett-Regular';
+    src: url('../../../fonts/Monofett-Regular.ttf');
+}
+
 .board-div h1 {
     padding-top: 4vh;
-    font-size: 10vh;
+    font-size: 14vh;
+    font-family: 'Monofett-Regular';
+    letter-spacing: 1.5vh;
 }
 
 .button-container {
@@ -25,7 +32,7 @@
     border-radius: 5px;
     background-color: #f0f0f0;
     border: 2px solid #ccc;
-    font-family: 'sans-serif';
+    font-family: 'PressStart2P-Regular';
     cursor: pointer;
     box-shadow: 0 0 5px #ccc;
 }
@@ -46,10 +53,12 @@
     }
 }
 
-.scorewrapper {
+.score-wrapper {
     margin-top: 10vh;
 }
 
-.scorewrapper p {
+.score-wrapper p {
     font-size: 3vh;
+    font-family: 'PressStart2P-Regular';
+    line-height: 5vh;
 }
