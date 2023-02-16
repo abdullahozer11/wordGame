@@ -1,6 +1,7 @@
 .board-div {
     width: 100vw;
     height: 100vh;
+    height: 100dvh;
     text-align: center;
     background-color: snow;
 }
