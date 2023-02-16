@@ -86,3 +86,9 @@
     position: relative;
     top: 10rem;
 }
+
+@media (pointer: coarse) {
+    .border {
+        display: none !important;
+    }
+}
