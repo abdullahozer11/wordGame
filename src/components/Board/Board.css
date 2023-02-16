@@ -51,6 +51,13 @@
     .button-container {
         margin-top: 10vh;
     }
+    #try-button {
+        width: 60rem;
+        height: 40rem;
+    }
+    .board-div h1 {
+        letter-spacing: .3vh;
+    }
 }
 
 .score-wrapper {

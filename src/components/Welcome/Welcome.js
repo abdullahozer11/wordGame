@@ -17,6 +17,21 @@ class Welcome extends Component {
         this.animateWelcomeMessage();
     }
 
+    animateWelcomeMessage() {
+        this.setState({
+            text: [[' ', 'L', 'E', 'T', 'S', ' ', ' '],
+                [' ', 'P', 'L', 'A', 'Y', '!', ' '],
+                [' ', 'W', 'O', 'R', 'D', 'S', ' ']]
+        });
+        setTimeout(() => {
+            this.setState({
+                text: [[' ', 'P', 'R', 'E', 'S', 'S', ' '],
+                    [' ', 'E', 'N', 'T', 'E', 'R', ' '],
+                    [' ', 'S', 'T', 'A', 'R', 'T', '.']]
+            });
+        }, 4000);
+    }
+
     render() {
         return (
             <div className="welcome-container">
@@ -49,23 +64,9 @@ class Welcome extends Component {
                         <Tile letter={this.state.text[2][6]}/>
                     </div>
                 </div>
+                <button className={'go-button glow'}>GO</button>
             </div>
         );
-    }
-
-    animateWelcomeMessage() {
-        this.setState({
-            text: [[' ', 'L', 'E', 'T', 'S', ' ', ' '],
-                [' ', 'P', 'L', 'A', 'Y', '!', ' '],
-                [' ', 'W', 'O', 'R', 'D', 'S', ' ']]
-        });
-        setTimeout(() => {
-            this.setState({
-                text: [[' ', 'P', 'R', 'E', 'S', 'S', ' '],
-                    [' ', 'E', 'N', 'T', 'E', 'R', ' '],
-                    [' ', 'S', 'T', 'A', 'R', 'T', '.']]
-            });
-        }, 4000);
     }
 }
 

@@ -29,15 +29,53 @@
     justify-content: space-between;
 }
 
+.go-button {
+    position: relative;
+    top: 31.5vh;
+    left: 17.5vw;
+    width: 10vw;
+    height: 7.5vh;
+    cursor: pointer;
+    font-size: 4vh;
+    border: 2px solid #826850;
+    border-radius: 10px;
+    background-color: #1a0e0c;
+    font-family: 'PressStart2P-Regular';
+    color: #edeee0;
+    line-height: 7.8vh;
+}
+
 @media only screen and (max-width: 900px) {
     .welcome-container {
         background-image: url('../../../images/welcome-mobile.png');
     }
-
+    .go-button {
+        top: 40.5vh;
+        left: 30vw;
+        width: 15vw;
+        height: 3.7vh;
+        font-size: 3vh;
+        border: 2px solid #826850;
+        border-radius: 10px;
+    }
     .welcome-div {
         top: 38%;
         left: 10.8%;
         height: 16.6%;
         width: 77%;
+    }
+}
+
+.glow {
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
     }
 }
