@@ -23,7 +23,6 @@ class Game extends Component {
 
   render() {
     const { started } = this.state;
-
     return (
       <div className={'game'} onKeyPress={this.handleKeyPress} tabIndex={0}>
         {started ? <Board /> : <Welcome startCallBack={this.start} />}

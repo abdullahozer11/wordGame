@@ -2,8 +2,10 @@ import React, {Component} from 'react';
 import Word from "../Word/Word";
 import "./Board.css";
 import Score from "../Score/Score";
+import axios from "axios";
 
-const dictionary = require('../../dictionary.js');
+import { API_URL } from "../../constants.js";
+
 
 class Board extends Component {
     constructor(props) {
@@ -33,21 +35,31 @@ class Board extends Component {
         }
     }
 
-    play() {
+    async play() {
         let word = this.state.focusedWord;
-        if (!this.state.playedWords.includes(word) && (this.isWordValid(word))) {
-            this.setState({
-                score: this.state.score + 1,
-                playedWords: [...this.state.playedWords, word],
-            });
-            this.indicateCorrectWord();
-        } else {
-            this.indicateIncorrectWord();
+        try {
+            const isValid = await this.isWordValid(word);
+            if (!this.state.playedWords.includes(word) && isValid) {
+                this.setState({
+                    score: this.state.score + 1,
+                    playedWords: [...this.state.playedWords, word],
+                });
+                this.indicateCorrectWord();
+            } else {
+                this.indicateIncorrectWord();
+            }
+        } catch (error) {
+            console.error(error);
         }
     }
 
-    isWordValid(word) {
-        return dictionary.includes(word);
+    async isWordValid(word) {
+        try {
+            const response = await axios.post(API_URL + 'validate/', {'word': word});
+            return (response.data['answer'] === 'valid');
+        } catch (error) {
+            console.error(error);
+        }
     }
 
     focusedWordChange = (id, letter) => {

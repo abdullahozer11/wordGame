@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import LetterCube from "../LetterCube/LetterCube";
 import "./Word.css";
+import axios from 'axios';
 
-const consonants = 'BCDFGHJKLMNPQRSTVWXYZ';
-const vowels = 'AEIOU';
+import { API_URL } from "../../constants.js";
 
 
 class Word extends Component {
@@ -11,23 +11,15 @@ class Word extends Component {
         super(props);
         this.state = {
             focus: 0,
+            word: '',
         }
-        this.letters = [
-            ['', '', '', '', '', '', ''],
-            ['', '', '', '', '', '', ''],
-            ['', '', '', '', '', '', ''],
-            ['', '', '', '', '', '', ''],
-            ['', '', '', '', '', '', ''],
-        ]
     }
 
     componentDidMount() {
-        this.setRandomLetters();
-        let word = '';
-        this.letters.forEach(list => {
-            word += list[0];
+        axios.get(API_URL + 'get/').then(response => {
+            this.setState({word: response.data.word});
+            this.props.initWord(response.data.word[0] + response.data.word[6] + response.data.word[12] + response.data.word[18] + response.data.word[24]);
         });
-        this.props.initWord(word);
         window.addEventListener('keydown', this.handleKeyDown);
     }
 
@@ -54,46 +46,18 @@ class Word extends Component {
     render() {
         return (
             <div className={'word-div'}>
-                <LetterCube id={0} letterList={this.letters[0]} focus={this.state.focus === 0}
+                <LetterCube id={0} letterList={this.state.word.slice(0, 6)} focus={this.state.focus === 0}
                             focusedWordChange={this.props.focusedWordChange}/>
-                <LetterCube id={1} letterList={this.letters[1]} focus={this.state.focus === 1}
+                <LetterCube id={1} letterList={this.state.word.slice(6, 12)} focus={this.state.focus === 1}
                             focusedWordChange={this.props.focusedWordChange}/>
-                <LetterCube id={2} letterList={this.letters[2]} focus={this.state.focus === 2}
+                <LetterCube id={2} letterList={this.state.word.slice(12, 18)} focus={this.state.focus === 2}
                             focusedWordChange={this.props.focusedWordChange}/>
-                <LetterCube id={3} letterList={this.letters[3]} focus={this.state.focus === 3}
+                <LetterCube id={3} letterList={this.state.word.slice(18, 24)} focus={this.state.focus === 3}
                             focusedWordChange={this.props.focusedWordChange}/>
-                <LetterCube id={4} letterList={this.letters[4]} focus={this.state.focus === 4}
+                <LetterCube id={4} letterList={this.state.word.slice(24)} focus={this.state.focus === 4}
                             focusedWordChange={this.props.focusedWordChange}/>
             </div>
         );
-    }
-
-    getRandomCharacters(characters, count) {
-        let result = "";
-        let selectedChars = new Set();
-        while (result.length < count) {
-            let char = characters.charAt(Math.floor(Math.random() * characters.length));
-            if (!selectedChars.has(char)) {
-                selectedChars.add(char);
-                result += char;
-            }
-        }
-        return result;
-    }
-
-    setRandomLetters() {
-        let _vovels;
-        let _consonants;
-        for (let i = 0; i < 5; i++) {
-            _vovels = this.getRandomCharacters(vowels, 2);
-            _consonants = this.getRandomCharacters(consonants, 4);
-            this.letters[i][0] = _vovels.charAt(0);
-            this.letters[i][1] = _vovels.charAt(1);
-            this.letters[i][2] = _consonants.charAt(0);
-            this.letters[i][3] = _consonants.charAt(1);
-            this.letters[i][4] = _consonants.charAt(2);
-            this.letters[i][5] = _consonants.charAt(3);
-        }
     }
 }
 
