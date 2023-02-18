@@ -62,6 +62,7 @@ class LetterCube extends Component {
 
     shouldComponentUpdate(nextProps, nextState, nextContext) {
         return this.state.index !== nextState.index ||
+               this.props.focus !== nextProps.focus ||
                this.props.letterList !== nextProps.letterList;
     }
 
