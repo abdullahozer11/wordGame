@@ -62,7 +62,7 @@ class LetterCube extends Component {
 
     render() {
         return (
-            <div className={'letter-wrapper'} onTouchStart={this.handleTouchStart}>
+            <div className={'letter-wrapper'} onTouchStart={this.handleTouchStart} onWheel={this.handleScroll}>
                 <button className={'cube-ctrl-button'} id="upButton"
                         onClick={() => this.rotate({forward: false})}>
                     <svg viewBox="0 0 50 30">
@@ -116,6 +116,14 @@ class LetterCube extends Component {
             this.rotate({forward: false});
         }
         this.setState({touchStartY: null, source: false});
+    }
+
+    handleScroll = (event) => {
+        if (event.deltaY > 0) {
+            this.rotate({forward: true});
+        } else {
+            this.rotate({forward: false});
+        }
     }
 }
 
