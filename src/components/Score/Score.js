@@ -10,7 +10,14 @@ class Score extends Component {
                 <p>{this.props.score}</p>
                 <div className="wordListContainer">
                     <ul className="playerWordList">
-                        {this.props.playedWords.map(word => <li key={word}>{word}</li>)}
+                        {this.props.playedWords.map(word => {
+                            const randomColor = `rgb(
+                                ${Math.floor(Math.random() * 256)},
+                                ${Math.floor(Math.random() * 256)},
+                                ${Math.floor(Math.random() * 256)}
+                            )`;
+                            return <li style={{fontSize: this.props.fontsize, color: randomColor}} key={word}>{word}</li>
+                        })}
                     </ul>
                 </div>
             </div>

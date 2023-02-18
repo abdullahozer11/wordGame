@@ -14,6 +14,7 @@ class Board extends Component {
             playedWords: [],
             score: 0,
             focusedWord: '',
+            fontsize: '6rem',
         }
     }
 
@@ -39,11 +40,16 @@ class Board extends Component {
         let word = this.state.focusedWord;
         try {
             const isValid = await this.isWordValid(word);
-            if (!this.state.playedWords.includes(word) && isValid) {
+            if (isValid) {
                 this.setState({
                     score: this.state.score + 1,
                     playedWords: [...this.state.playedWords, word],
                 });
+                if (this.state.score > 18) {
+                    this.setState({fontsize: '2rem'});
+                } else if (this.state.score > 5) {
+                    this.setState({fontsize: '4rem'});
+                }
                 this.indicateCorrectWord();
             } else {
                 this.indicateIncorrectWord();
@@ -83,7 +89,7 @@ class Board extends Component {
                         <button id={'try-button'} onClick={() => this.play()}>PLAY</button>
                     </div>
                 </div>
-                <Score score={this.state.score}/>
+                <Score score={this.state.score} fontsize={this.state.fontsize} playedWords={this.state.playedWords}/>
             </div>
         );
     }
