@@ -16,7 +16,10 @@ class Score extends Component {
                                 ${Math.floor(Math.random() * 256)},
                                 ${Math.floor(Math.random() * 256)}
                             )`;
-                            return <li style={{fontSize: this.props.fontsize, color: randomColor}} key={word}>{word}</li>
+                            return <li style={{
+                                fontSize: this.props.score > 8 ? '0.5em' : '1em',
+                                color: randomColor
+                            }} key={word}>{word}</li>
                         })}
                     </ul>
                 </div>
