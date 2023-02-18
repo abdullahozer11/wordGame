@@ -10,10 +10,14 @@ import { API_URL } from "../../constants.js";
 class Board extends Component {
     constructor(props) {
         super(props);
+        const date = new Date();
         this.state = {
             playedWords: [],
             score: 0,
             focusedWord: '',
+            year: date.getFullYear(),
+            month: date.getMonth(),
+            day: date.getDate(),
         }
     }
 
@@ -22,7 +26,11 @@ class Board extends Component {
         // load state from local storage
         const state = window.localStorage.getItem('state');
         if (state) {
-            this.setState(JSON.parse(state));
+            if (new Date(state.year, state.month, state.day) === new Date()) {
+                this.setState(state);
+            } else {
+                window.localStorage.clear();
+            }
         }
     }
 
