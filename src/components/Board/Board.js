@@ -19,17 +19,19 @@ class Board extends Component {
             month: date.getMonth(),
             day: date.getDate(),
         }
+        this.localStorageName = 'Words Game Progression';
     }
 
     componentDidMount() {
         window.addEventListener('keydown', this.handleKeyDown);
         // load state from local storage
-        const state = window.localStorage.getItem('state');
-        if (state) {
-            if (new Date(state.year, state.month, state.day) === new Date()) {
-                this.setState(state);
+        const savedState = window.localStorage.getItem(this.localStorageName);
+        if (savedState) {
+            const {year, month, day, ...rest} = JSON.parse(savedState);
+            if (new Date(year, month, day) === new Date()) {
+                this.setState(rest);
             } else {
-                window.localStorage.clear();
+                window.localStorage.removeItem(this.localStorageName);
             }
         }
     }
@@ -39,8 +41,9 @@ class Board extends Component {
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        // save state to local storage
-        window.localStorage.setItem('state', JSON.stringify(this.state));
+        if (prevState !== this.state) {
+            window.localStorage.setItem(this.localStorageName, JSON.stringify(this.state));
+        }
     }
 
     handleKeyDown = (event) => {
