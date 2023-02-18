@@ -60,6 +60,11 @@ class LetterCube extends Component {
         }
     };
 
+    shouldComponentUpdate(nextProps, nextState, nextContext) {
+        return this.state.index !== nextState.index ||
+               this.props.letterList !== nextProps.letterList;
+    }
+
     render() {
         return (
             <div className={'letter-wrapper'} onTouchStart={this.handleTouchStart} onWheel={this.handleScroll}>
