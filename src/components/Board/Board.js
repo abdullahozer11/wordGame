@@ -73,21 +73,6 @@ class Board extends Component {
         this.setState({focusedWord: word});
     }
 
-    render() {
-        return (
-            <div className={'board-div'}>
-                <h1>WORDS</h1>
-                <div className={'game-mid-div'}>
-                    <Word focusedWordChange={this.focusedWordChange} initWord={this.initWord}/>
-                    <div className="button-container">
-                        <button id={'try-button'} onClick={() => this.play()}>PLAY</button>
-                    </div>
-                </div>
-                <Score score={this.state.score} playedWords={this.state.playedWords}/>
-            </div>
-        );
-    }
-
     indicateCorrectWord() {
         let button = document.getElementById('try-button');
         button.style.backgroundColor = 'green';
@@ -102,6 +87,21 @@ class Board extends Component {
         setTimeout(() => {
             button.style.backgroundColor = '';
         }, 1000);
+    }
+
+    render() {
+        return (
+            <div className={'board-div'}>
+                <h1>WORDS</h1>
+                <div className={'game-mid-div'}>
+                    <Word focusedWordChange={this.focusedWordChange} initWord={this.initWord}/>
+                    <div className="button-container">
+                        <button id={'try-button'} onClick={() => this.play()}>PLAY</button>
+                    </div>
+                </div>
+                <Score score={this.state.score} playedWords={this.state.playedWords}/>
+            </div>
+        );
     }
 }
 
