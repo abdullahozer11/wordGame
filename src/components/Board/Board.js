@@ -19,10 +19,20 @@ class Board extends Component {
 
     componentDidMount() {
         window.addEventListener('keydown', this.handleKeyDown);
+        // load state from local storage
+        const state = window.localStorage.getItem('state');
+        if (state) {
+            this.setState(JSON.parse(state));
+        }
     }
 
     componentWillUnmount() {
         window.removeEventListener('keydown', this.handleKeyDown);
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        // save state to local storage
+        window.localStorage.setItem('state', JSON.stringify(this.state));
     }
 
     handleKeyDown = (event) => {
@@ -39,7 +49,7 @@ class Board extends Component {
         let word = this.state.focusedWord;
         try {
             const isValid = await this.isWordValid(word);
-            if (isValid) {
+            if (!this.state.playedWords.includes(word) && isValid) {
                 this.setState({
                     score: this.state.score + 1,
                     playedWords: [...this.state.playedWords, word],

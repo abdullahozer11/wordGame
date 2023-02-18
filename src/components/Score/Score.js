@@ -3,22 +3,26 @@ import "./Score.css";
 
 
 class Score extends Component {
+    colors = ['red', 'blue', 'green', 'yellow', 'orange', 'purple', 'pink', 'brown'];
+
+    shouldComponentUpdate(nextProps) {
+        return this.props.score !== nextProps.score;
+    }
     render() {
+        const { score, playedWords } = this.props;
+        let colorIndex = 0;
         return (
             <div className={'score-wrapper'}>
                 <p>SCORE:</p>
-                <p>{this.props.score}</p>
+                <p>{score}</p>
                 <div className="wordListContainer">
                     <ul className="playerWordList">
-                        {this.props.playedWords.map(word => {
-                            const randomColor = `rgb(
-                                ${Math.floor(Math.random() * 256)},
-                                ${Math.floor(Math.random() * 256)},
-                                ${Math.floor(Math.random() * 256)}
-                            )`;
+                        {playedWords.map(word => {
+                            const color = this.colors[colorIndex % this.colors.length];
+                            colorIndex++;
                             return <li style={{
-                                fontSize: this.props.score > 8 ? '0.5em' : '1em',
-                                color: randomColor
+                                fontSize: score > 8 ? '2em' : '4em',
+                                color: color
                             }} key={word}>{word}</li>
                         })}
                     </ul>
