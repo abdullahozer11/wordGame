@@ -1,90 +1,90 @@
 .letter-wrapper {
-    font-size: 0.3vw;
-    width: 40rem;
+    font-size: 1em;
+    width: 30em;
 }
 
 .container {
-    height: 40rem;
-    margin: 25rem 7.5rem 0 7.5rem;
+    height: 40em;
+    margin: 25em 7.5em 0 7.5em;
 }
 
 .box {
     justify-content: center;
     text-align: center;
-    width: 25rem;
-    height: 25rem;
+    width: 25em;
+    height: 25em;
     transform-style: preserve-3d;
-    transform-origin: 50% 50% -21.6506351rem;
+    transform-origin: 50% 50% -21.6506351em;
     transition: transform .5s linear;
 }
 
 .card {
-    height: 25rem;
-    width: 25rem;
+    height: 25em;
+    width: 25em;
     text-align: center;
     color: white;
     background: #211c22;
-    border: 0.2rem solid white;
-    line-height: 25rem;
+    border: 0.2em solid white;
+    line-height: 25em;
     box-sizing: border-box;
     position: absolute;
 }
 
+.letterTextWrapper > span {
+    font-size: 9em;
+}
+
 .border {
     position: relative;
-    height: 23rem;
-    width: 23rem;
-    border: 2rem solid black;
-    top: -25rem;
-    transform: translateX(-1rem) translateY(-1rem);
+    height: 23em;
+    width: 23em;
+    border: 2em solid black;
+    top: -25em;
+    transform: translateX(-1em) translateY(-1em);
 }
 
 #face2 {
     transform-origin: top;
-    transform: translateY(25rem) rotateX(-60deg);
+    transform: translateY(25em) rotateX(-60deg);
 }
 
 #face3 {
     transform-origin: bottom;
-    transform: translateZ(-43.3012702rem) rotateX(-120deg);
+    transform: translateZ(-43.3012702em) rotateX(-120deg);
 }
 
 #face4 {
-    transform: translateZ(-43.3012702rem) rotateX(180deg);
+    transform: translateZ(-43.3012702em) rotateX(180deg);
 }
 
 #face5 {
     transform-origin: top;
-    transform: translateZ(-43.3012702rem) rotateX(120deg);
+    transform: translateZ(-43.3012702em) rotateX(120deg);
 }
 
 #face6 {
     transform-origin: bottom;
-    transform: translateY(-25rem) rotateX(60deg);
-}
-
-.letterTextWrapper {
-    font-size: 10rem;
+    transform: translateY(-25em) rotateX(60deg);
 }
 
 .cube-ctrl-button {
-    font-size: 5rem;
+    font-size: 5em;
     background: white;
     color: #282c34;
-    width: 20rem;
-    height: 10rem;
-    border: 0.2rem solid #282c34;
+    width: 2em;
+    height: 1em;
+    border: 0.2em solid #282c34;
     border-radius: 15px;
 }
 
 .cube-ctrl-button svg {
-    width: 10rem;
-    margin-top: 1rem;
+    width: 1em;
+    margin-top: 0.1em;
 }
 
 #upButton {
     position: relative;
-    top: 10rem;
+    top: 1em;
 }
 
 @media (pointer: coarse) {
@@ -95,7 +95,7 @@
 
 @media only screen and (max-width: 900px) {
     .container {
-        height: 40rem;
-        margin: 25rem 0 0 0;
+        height: 40em;
+        margin: 25em 0 0 0;
     }
 }

@@ -32,7 +32,9 @@ class LetterCube extends Component {
             transform: `rotateX(${nextIndex * 60}deg)`,
             focusedLetter: nextFocusedLetter
         });
-        this.props.focusedWordChange(this.props.id, nextFocusedLetter);
+        if (!this.props.dummy) {
+            this.props.focusedWordChange(this.props.id, nextFocusedLetter);
+        }
     }
 
     componentDidMount() {
@@ -80,22 +82,22 @@ class LetterCube extends Component {
                 <div className="container">
                     <div className="box" style={{transform: this.state.transform}}>
                         <div className="card" id="face1">
-                            <div className={'letterTextWrapper'}>{this.props.letterList[0]}</div>
+                            <div className={'letterTextWrapper'}><span>{this.props.letterList[0]}</span></div>
                         </div>
                         <div className="card" id="face2">
-                            <div className={'letterTextWrapper'}>{this.props.letterList[1]}</div>
+                            <div className={'letterTextWrapper'}><span>{this.props.letterList[1]}</span></div>
                         </div>
                         <div className="card" id="face3">
-                            <div className={'letterTextWrapper'}>{this.props.letterList[2]}</div>
+                            <div className={'letterTextWrapper'}><span>{this.props.letterList[2]}</span></div>
                         </div>
                         <div className="card" id="face4">
-                            <div className={'letterTextWrapper'}>{this.props.letterList[3]}</div>
+                            <div className={'letterTextWrapper'}><span>{this.props.letterList[3]}</span></div>
                         </div>
                         <div className="card" id="face5">
-                            <div className={'letterTextWrapper'}>{this.props.letterList[4]}</div>
+                            <div className={'letterTextWrapper'}><span>{this.props.letterList[4]}</span></div>
                         </div>
                         <div className="card" id="face6">
-                            <div className={'letterTextWrapper'}>{this.props.letterList[5]}</div>
+                            <div className={'letterTextWrapper'}><span>{this.props.letterList[5]}</span></div>
                         </div>
                     </div>
                     <div className={'border'} style={{display: (this.props.focus ? 'block' : 'none')}}/>

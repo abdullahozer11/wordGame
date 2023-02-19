@@ -5,6 +5,7 @@ import Score from "../Score/Score";
 import axios from "axios";
 
 import { API_URL } from "../../constants.js";
+import LetterCube from "../LetterCube/LetterCube";
 
 
 class Board extends Component {
@@ -18,6 +19,7 @@ class Board extends Component {
             year: date.getFullYear(),
             month: date.getMonth(),
             day: date.getDate(),
+            tip_display: true,
         }
         this.localStorageName = 'Words Game Progression';
     }
@@ -110,6 +112,10 @@ class Board extends Component {
         }, 1000);
     }
 
+    handleClose() {
+        this.setState({tip_display: false});
+    }
+
     render() {
         return (
             <div className={'board-div'}>
@@ -121,6 +127,16 @@ class Board extends Component {
                     </div>
                 </div>
                 <Score score={this.state.score} playedWords={this.state.playedWords}/>
+                <div className={`tips-window ${this.state.tip_display ? 'display-tip' : 'hide-tip'}`}>
+                    <div className="tip-text">
+                        rotate letters to form many words
+                    </div>
+                    <div className="tip-animation">
+                        <LetterCube id={99} letterList={['A', 'B', 'C', 'D', 'E', 'F']} focus={false} dummy={true}/>
+                        <img src={require('../../images/hand.png')} alt={'hand'}/>
+                    </div>
+                          <button className="close-tip-button" onClick={() => this.handleClose()}>Close</button>
+                </div>
             </div>
         );
     }

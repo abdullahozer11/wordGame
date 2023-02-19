@@ -47,15 +47,15 @@ class Word extends Component {
         return (
             <div className={'word-div'}>
                 <LetterCube id={0} letterList={this.state.word.slice(0, 6)} focus={this.state.focus === 0}
-                            focusedWordChange={this.props.focusedWordChange}/>
+                            focusedWordChange={this.props.focusedWordChange} dummy={false}/>
                 <LetterCube id={1} letterList={this.state.word.slice(6, 12)} focus={this.state.focus === 1}
-                            focusedWordChange={this.props.focusedWordChange}/>
+                            focusedWordChange={this.props.focusedWordChange} dummy={false}/>
                 <LetterCube id={2} letterList={this.state.word.slice(12, 18)} focus={this.state.focus === 2}
-                            focusedWordChange={this.props.focusedWordChange}/>
+                            focusedWordChange={this.props.focusedWordChange} dummy={false}/>
                 <LetterCube id={3} letterList={this.state.word.slice(18, 24)} focus={this.state.focus === 3}
-                            focusedWordChange={this.props.focusedWordChange}/>
+                            focusedWordChange={this.props.focusedWordChange} dummy={false}/>
                 <LetterCube id={4} letterList={this.state.word.slice(24)} focus={this.state.focus === 4}
-                            focusedWordChange={this.props.focusedWordChange}/>
+                            focusedWordChange={this.props.focusedWordChange} dummy={false}/>
             </div>
         );
     }
