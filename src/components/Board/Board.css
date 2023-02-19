@@ -16,7 +16,7 @@
     font-size: 14vh;
     font-family: 'Monofett-Regular';
     letter-spacing: 1.5vh;
-    text-decoration: none;
+    cursor: default;
 }
 
 .button-container {
@@ -70,7 +70,7 @@
     font-size: 3vh;
     font-family: 'PressStart2P-Regular';
     line-height: 5vh;
-    text-decoration: none;
+    cursor: default;
 }
 
 .tips-window {

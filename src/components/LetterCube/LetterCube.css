@@ -1,6 +1,6 @@
 .letter-wrapper {
     font-size: 1em;
-    width: 30em;
+    width: 40em;
 }
 
 .container {
@@ -32,6 +32,7 @@
 
 .letterTextWrapper > span {
     font-size: 9em;
+    cursor: default;
 }
 
 .border {
@@ -68,23 +69,25 @@
 }
 
 .cube-ctrl-button {
-    font-size: 5em;
+    font-size: 8em;
     background: white;
     color: #282c34;
     width: 2em;
     height: 1em;
-    border: 0.2em solid #282c34;
+    border: 0.08em solid #282c34;
     border-radius: 15px;
+    box-sizing: border-box;
 }
 
 .cube-ctrl-button svg {
-    width: 1em;
-    margin-top: 0.1em;
+    width: 0.8em;
+    /*margin-top: -0.1em;*/
+    margin: 0 0 0.25em 0;
 }
 
 #upButton {
     position: relative;
-    top: 1em;
+    top: 1.23em;
 }
 
 @media (pointer: coarse) {
