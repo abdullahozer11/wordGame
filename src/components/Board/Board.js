@@ -30,7 +30,8 @@ class Board extends Component {
         const savedState = window.localStorage.getItem(this.localStorageName);
         if (savedState) {
             const {year, month, day, ...rest} = JSON.parse(savedState);
-            if (new Date(year, month, day) === new Date()) {
+            const today = new Date();
+            if (year === today.getFullYear() && month === today.getMonth() && day === today.getDate() ) {
                 this.setState(rest);
             } else {
                 window.localStorage.removeItem(this.localStorageName);
