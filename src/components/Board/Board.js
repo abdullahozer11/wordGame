@@ -19,7 +19,7 @@ class Board extends Component {
             year: date.getFullYear(),
             month: date.getMonth(),
             day: date.getDate(),
-            tip_display: true,
+            hide_tip: false
         }
         this.localStorageName = 'Words Game Progression';
     }
@@ -114,21 +114,27 @@ class Board extends Component {
     }
 
     handleClose() {
-        this.setState({tip_display: false});
+        this.setState({hide_tip: true});
     }
 
     render() {
         return (
-            <div className={'board-div'}>
-                <h1>WORDS</h1>
-                <div className={'game-mid-div'}>
-                    <Word focusedWordChange={this.focusedWordChange} initWord={this.initWord}/>
-                    <div className="button-container">
-                        <button id={'try-button'} onClick={() => this.play()}>PLAY</button>
+            <>
+                <div className={'board-div'}>
+                    <div className={'game-top-div'}>
+                        <h1>WORDS</h1>
+                    </div>
+                    <div className={'game-mid-div'}>
+                        <Word focusedWordChange={this.focusedWordChange} initWord={this.initWord}/>
+                        <div className="button-container">
+                            <button id={'try-button'} onClick={() => this.play()}>PLAY</button>
+                        </div>
+                    </div>
+                    <div className={'game-bottom-div'}>
+                        <Score score={this.state.score} playedWords={this.state.playedWords}/>
                     </div>
                 </div>
-                <Score score={this.state.score} playedWords={this.state.playedWords}/>
-                <div className={`tips-window ${this.state.tip_display ? 'display-tip' : 'hide-tip'}`}>
+                <div className={`tips-window ${this.state.hide_tip ? 'hide-tip' : ''}`}>
                     <div className="tip-text">
                         rotate letters to form many words
                     </div>
@@ -138,7 +144,7 @@ class Board extends Component {
                     </div>
                           <button className="close-tip-button" onClick={() => this.handleClose()}>Close</button>
                 </div>
-            </div>
+            </>
         );
     }
 }

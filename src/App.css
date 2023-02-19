@@ -3,12 +3,22 @@
     margin: 0;
 }
 
+.App {
+    overflow: hidden;
+}
+
 html {
-    font-size: 7px
+    font-size: 0.55vh
+}
+
+@media only screen and (max-width: 1400px) {
+    html {
+        font-size: 0.41vw
+    }
 }
 
 @media only screen and (max-width: 900px) {
     html {
-        font-size: 0.7vw
+        font-size: 0.5vw
     }
 }
