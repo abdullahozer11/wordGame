@@ -161,6 +161,7 @@
     }
     .board-div h1 {
         letter-spacing: .3vh;
+        margin-top: 10vh;
     }
 
     .tips-window {
@@ -195,7 +196,7 @@
     }
 
     .game-top-div > h1 {
-        font-size: 38rem;
+        font-size: 50rem;
     }
 
     #upButton {
